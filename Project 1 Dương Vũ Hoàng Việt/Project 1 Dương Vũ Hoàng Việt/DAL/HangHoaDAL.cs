@@ -14,22 +14,15 @@ namespace Project_1_Dương_Vũ_Hoàng_Việt
         }
         public List<String> DanhSachSP()
         {
-            Console.Clear();Console.Beep();
             StreamReader SR =new StreamReader(filename);
-            string docfile;
+            string read;
             List<String> DSSanPham = new List<string>();
-            do
-            {
-                docfile = SR.ReadLine();
-                if (docfile==null)
-                {
-                    break;
-                }
-                string[] plit = docfile.Split("|");
-                string dulieu = plit[0] + "| " + plit[1] + "|" + plit[2] + "|" + plit[3] + "|" + plit[4] + "|" + plit[5];
+            while ((read = SR.ReadLine()) != null) {
+                if (read==null) Console.WriteLine("Rỗng"); continue;
+                string[] plit = read.Split("|");
+                string dulieu = plit[0] + "\t" + plit[1] + "\t" + plit[2] + "\t" + plit[3] + "\t" + plit[4] + "\t" + plit[5];
                 DSSanPham.Add(dulieu);
             }
-            while (docfile != null);
             SR.Close();
             return DSSanPham;
         }
@@ -37,7 +30,7 @@ namespace Project_1_Dương_Vũ_Hoàng_Việt
         {
 
             StreamWriter SW = new StreamWriter(filename, true);
-            SW.WriteLine($"{tensp}|{masp}|{dongia}|{soluong}|{donvitinh}|{thanhtien}\n");
+            SW.WriteLine($"{masp}|{tensp}|{dongia}|{soluong}|{donvitinh}|{thanhtien}\n");
             SW.Close();
         }
         public void Suasp(string masp, string tensp, string donvitinh, int dongia, int soluong, int thanhtien)

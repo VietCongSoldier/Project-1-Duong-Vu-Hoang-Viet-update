@@ -70,7 +70,7 @@ namespace Project_1_Dương_Vũ_Hoàng_Việt.GUI
         public void Themsp()
         {
             Console.Clear();
-            string tensp, masp, donvitinh, phuongthuctt;
+            string tensp, masp, donvitinh;
             int dongia, soluong;
             do
             {
