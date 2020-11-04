@@ -5,13 +5,7 @@ namespace Project_1_Dương_Vũ_Hoàng_Việt
 {
     class GUI_Chinh
     {
-        static void Main(string[] args)
-        {
-            Console.OutputEncoding = Encoding.UTF8;
-            Console.InputEncoding = Encoding.UTF8;
-            MENUCHINH();
-        }
-        static void MENUCHINH()
+        public void MENUCHINH()
         {
             Console.SetCursorPosition(40, 1); Console.WriteLine("CHƯƠNG TRÌNH QUẢN LÝ KHO NHÀ HÀNG");
             Console.SetCursorPosition(25,  8); Console.WriteLine("______________________________________________________________________");
@@ -37,21 +31,21 @@ namespace Project_1_Dương_Vũ_Hoàng_Việt
             else if (chon == "2")
             {
                 Console.Beep();
-                HangHoa HH = new HangHoa();
+                HangHoaDAL HH = new HangHoaDAL();
                 
                 Console.ReadKey();
             }
             else if (chon == "3")
             {
                 Console.Beep();
-                HangHoa HH = new HangHoa();
+                HangHoaDAL HH = new HangHoaDAL();
                 
                 Console.ReadKey();
             }
             else if (chon == "4")
             {
                 Console.Beep();
-                HangHoa HH = new HangHoa();
+                HangHoaDAL HH = new HangHoaDAL();
                 HH.HienThiHangHoa();
                 Console.ReadKey();
             }
@@ -63,7 +57,7 @@ namespace Project_1_Dương_Vũ_Hoàng_Việt
             Console.Clear();
             MENUCHINH();
         }
-        static void MENUHangHoa()
+        public void MENUHangHoa()
         {
             Console.ForegroundColor = ConsoleColor.Green; Console.SetCursorPosition(25,  8); Console.WriteLine(" ____________________________________________________________________");
             Console.ForegroundColor = ConsoleColor.Green; Console.SetCursorPosition(25,  9); Console.WriteLine("|                    Quản Lý Danh Sách Sản Phẩm                      |");
@@ -80,31 +74,31 @@ namespace Project_1_Dương_Vũ_Hoàng_Việt
             string chon = Console.ReadLine();
             if (chon == "1")
             {
-                HangHoa HH = new HangHoa();
+                HangHoaDAL HH = new HangHoaDAL();
                 HH.HienThiHangHoa();
                 Console.ReadKey();
             }
             else if (chon == "2")
             {
-                HangHoa HH = new HangHoa();
+                HangHoaDAL HH = new HangHoaDAL();
                 HH.Themsp();
                 Console.ReadKey();
             }
             else if (chon == "3")
             {
-                HangHoa HH = new HangHoa();
+                HangHoaDAL HH = new HangHoaDAL();
                 HH.Suasp();
                 Console.ReadKey();
             }
             else if (chon == "4")
             {
-                HangHoa HH = new HangHoa();
+                HangHoaDAL HH = new HangHoaDAL();
                 HH.Xoasp();
                 Console.ReadKey();
             }
             else if (chon == "5")
             {
-                HangHoa HH = new HangHoa();
+                HangHoaDAL HH = new HangHoaDAL();
                 HH.Timkiemsp();
                 Console.ReadKey();
             }
