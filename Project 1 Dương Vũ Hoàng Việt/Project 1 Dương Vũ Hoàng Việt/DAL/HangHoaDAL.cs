@@ -12,12 +12,12 @@ namespace Project_1_Dương_Vũ_Hoàng_Việt
         {
             
         }
-        public List<String> DSHangHoa()
+        public List<String> DanhSachSP()
         {
             Console.Clear();Console.Beep();
             StreamReader SR =new StreamReader(filename);
             string docfile;
-            List<String> DSHangHoa = new List<string>();
+            List<String> DSSanPham = new List<string>();
             do
             {
                 docfile = SR.ReadLine();
@@ -26,22 +26,21 @@ namespace Project_1_Dương_Vũ_Hoàng_Việt
                     break;
                 }
                 string[] plit = docfile.Split("|");
-                int dong = int.Parse(plit[0]);
-                string dulieu = plit[0] + "| " + plit[1] + "|" + plit[2] + "|" + plit[3] + "|" + plit[4] + "|" + plit[5] + "|" + plit[6];
-                DSHangHoa.Add(dulieu);
+                string dulieu = plit[0] + "| " + plit[1] + "|" + plit[2] + "|" + plit[3] + "|" + plit[4] + "|" + plit[5];
+                DSSanPham.Add(dulieu);
             }
             while (docfile != null);
             SR.Close();
-            return DSHangHoa;
+            return DSSanPham;
         }
-        public void Themsp(string tensp,string masp,string donvitinh,string phuongthuctt,int dongia,int soluong,int thanhtien)
+        public void Themsp(string masp,string tensp,string donvitinh,int dongia,int soluong,int thanhtien)
         {
 
             StreamWriter SW = new StreamWriter(filename, true);
-            SW.WriteLine($"{masp}|{tensp}|{dongia}|{soluong}|{donvitinh}|{thanhtien}|{phuongthuctt}\n");
+            SW.WriteLine($"{tensp}|{masp}|{dongia}|{soluong}|{donvitinh}|{thanhtien}\n");
             SW.Close();
         }
-        public void Suasp(string tensp, string masp, string donvitinh, string phuongthuctt, int dongia, int soluong, int thanhtien)
+        public void Suasp(string masp, string tensp, string donvitinh, int dongia, int soluong, int thanhtien)
         {
             string temp = "";
             StreamReader SR = new StreamReader(filename);
@@ -52,7 +51,7 @@ namespace Project_1_Dương_Vũ_Hoàng_Việt
                 string[] dlhanghoa = read.Split('|');
                 if (dlhanghoa[0] == masp)
                 {
-                    temp += masp + '|' + tensp + '|' + dongia + '|' + soluong + '|' + donvitinh + '|' + thanhtien + '|' + phuongthuctt+"\n";
+                    temp += masp + '|' + tensp + '|' + dongia + '|' + soluong + '|' + donvitinh + '|' + thanhtien +"\n";
                 }
                 else
                 {
@@ -93,7 +92,7 @@ namespace Project_1_Dương_Vũ_Hoàng_Việt
                 string[] dlhanghoa = read.Split('|');
                 if (dlhanghoa[0] == masp)
                 {
-                    temp = dlhanghoa[0] + "\t"+ dlhanghoa[1] + "\t" + dlhanghoa[2] + "\t" + dlhanghoa[3] + "\t" + dlhanghoa[4] + "\t" + dlhanghoa[5] + "\t" + dlhanghoa[6];
+                    temp = dlhanghoa[0] + "\t"+ dlhanghoa[1] + "\t" + dlhanghoa[2] + "\t" + dlhanghoa[3] + "\t" + dlhanghoa[4] + "\t" + dlhanghoa[5];
                 }
             }
             SR.Close();

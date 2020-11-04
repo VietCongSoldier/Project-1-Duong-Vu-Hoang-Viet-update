@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Project_1_Dương_Vũ_Hoàng_Việt.GUI;
+using System;
 using System.Text;
 
 namespace Project_1_Dương_Vũ_Hoàng_Việt
 {
     class GUI_Chinh
     {
+        GUIHangHoa GuiHangHoa = new GUIHangHoa();
         public void MENUCHINH()
         {
             Console.SetCursorPosition(40, 1); Console.WriteLine("CHƯƠNG TRÌNH QUẢN LÝ KHO NHÀ HÀNG");
@@ -26,27 +28,22 @@ namespace Project_1_Dương_Vũ_Hoàng_Việt
             Console.Clear();
             if (chon == "1")
             {
-                MENUHangHoa();
+                GuiHangHoa.MENUHangHoa();
             }
             else if (chon == "2")
             {
                 Console.Beep();
-                HangHoaDAL HH = new HangHoaDAL();
                 
                 Console.ReadKey();
             }
             else if (chon == "3")
             {
                 Console.Beep();
-                HangHoaDAL HH = new HangHoaDAL();
-                
                 Console.ReadKey();
             }
             else if (chon == "4")
             {
                 Console.Beep();
-                HangHoaDAL HH = new HangHoaDAL();
-                HH.HienThiHangHoa();
                 Console.ReadKey();
             }
             else if (chon == "5")
@@ -57,58 +54,6 @@ namespace Project_1_Dương_Vũ_Hoàng_Việt
             Console.Clear();
             MENUCHINH();
         }
-        public void MENUHangHoa()
-        {
-            Console.ForegroundColor = ConsoleColor.Green; Console.SetCursorPosition(25,  8); Console.WriteLine(" ____________________________________________________________________");
-            Console.ForegroundColor = ConsoleColor.Green; Console.SetCursorPosition(25,  9); Console.WriteLine("|                    Quản Lý Danh Sách Sản Phẩm                      |");
-            Console.ForegroundColor = ConsoleColor.Green; Console.SetCursorPosition(25, 10); Console.WriteLine("|____________________________________________________________________|");
-            Console.ForegroundColor = ConsoleColor.Green; Console.SetCursorPosition(25, 11); Console.WriteLine("|                1. Hiển thị toàn bộ sản phẩm trong kho.             |");
-            Console.ForegroundColor = ConsoleColor.Green; Console.SetCursorPosition(25, 12); Console.WriteLine("|                2. Thêm sản phẩm vào kho.                           |");
-            Console.ForegroundColor = ConsoleColor.Green; Console.SetCursorPosition(25, 13); Console.WriteLine("|                3. Sửa sản phẩm trong kho.                          |");
-            Console.ForegroundColor = ConsoleColor.Green; Console.SetCursorPosition(25, 14); Console.WriteLine("|                4. Xóa sản phẩm trong kho.                          |");
-            Console.ForegroundColor = ConsoleColor.Green; Console.SetCursorPosition(25, 15); Console.WriteLine("|                5. Tìm Kiếm sản phẩm trong kho.                     |");
-            Console.ForegroundColor = ConsoleColor.Green; Console.SetCursorPosition(25, 16); Console.WriteLine("|                6. Quay lại.                                        |");
-            Console.ForegroundColor = ConsoleColor.Green; Console.SetCursorPosition(25, 17); Console.WriteLine("|                                                                    |");
-            Console.ForegroundColor = ConsoleColor.Green; Console.SetCursorPosition(25, 18); Console.WriteLine("|____________________________________________________________________|");
-            Console.ForegroundColor = ConsoleColor.Green; Console.SetCursorPosition(48, 17); Console.Write("Chọn công cụ số:"); Console.Beep();
-            string chon = Console.ReadLine();
-            if (chon == "1")
-            {
-                HangHoaDAL HH = new HangHoaDAL();
-                HH.HienThiHangHoa();
-                Console.ReadKey();
-            }
-            else if (chon == "2")
-            {
-                HangHoaDAL HH = new HangHoaDAL();
-                HH.Themsp();
-                Console.ReadKey();
-            }
-            else if (chon == "3")
-            {
-                HangHoaDAL HH = new HangHoaDAL();
-                HH.Suasp();
-                Console.ReadKey();
-            }
-            else if (chon == "4")
-            {
-                HangHoaDAL HH = new HangHoaDAL();
-                HH.Xoasp();
-                Console.ReadKey();
-            }
-            else if (chon == "5")
-            {
-                HangHoaDAL HH = new HangHoaDAL();
-                HH.Timkiemsp();
-                Console.ReadKey();
-            }
-            else if (chon == "6")
-            {
-                Console.Beep();
-                return;
-            }
-            Console.Clear();
-            MENUHangHoa();
-        }
+       
     }
 }
