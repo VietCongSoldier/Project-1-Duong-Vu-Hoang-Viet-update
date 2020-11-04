@@ -1,0 +1,13 @@
+E:\Dev\Project 1 Dương Vũ Hoàng Việt\Project 1 Dương Vũ Hoàng Việt\bin\Debug\netcoreapp3.1\Project 1 Dương Vũ Hoàng Việt.exe
+E:\Dev\Project 1 Dương Vũ Hoàng Việt\Project 1 Dương Vũ Hoàng Việt\bin\Debug\netcoreapp3.1\Project 1 Dương Vũ Hoàng Việt.deps.json
+E:\Dev\Project 1 Dương Vũ Hoàng Việt\Project 1 Dương Vũ Hoàng Việt\bin\Debug\netcoreapp3.1\Project 1 Dương Vũ Hoàng Việt.runtimeconfig.json
+E:\Dev\Project 1 Dương Vũ Hoàng Việt\Project 1 Dương Vũ Hoàng Việt\bin\Debug\netcoreapp3.1\Project 1 Dương Vũ Hoàng Việt.runtimeconfig.dev.json
+E:\Dev\Project 1 Dương Vũ Hoàng Việt\Project 1 Dương Vũ Hoàng Việt\bin\Debug\netcoreapp3.1\Project 1 Dương Vũ Hoàng Việt.dll
+E:\Dev\Project 1 Dương Vũ Hoàng Việt\Project 1 Dương Vũ Hoàng Việt\bin\Debug\netcoreapp3.1\Project 1 Dương Vũ Hoàng Việt.pdb
+E:\Dev\Project 1 Dương Vũ Hoàng Việt\Project 1 Dương Vũ Hoàng Việt\obj\Debug\netcoreapp3.1\Project 1 Dương Vũ Hoàng Việt.csprojAssemblyReference.cache
+E:\Dev\Project 1 Dương Vũ Hoàng Việt\Project 1 Dương Vũ Hoàng Việt\obj\Debug\netcoreapp3.1\Project 1 Dương Vũ Hoàng Việt.AssemblyInfoInputs.cache
+E:\Dev\Project 1 Dương Vũ Hoàng Việt\Project 1 Dương Vũ Hoàng Việt\obj\Debug\netcoreapp3.1\Project 1 Dương Vũ Hoàng Việt.AssemblyInfo.cs
+E:\Dev\Project 1 Dương Vũ Hoàng Việt\Project 1 Dương Vũ Hoàng Việt\obj\Debug\netcoreapp3.1\Project 1 Dương Vũ Hoàng Việt.csproj.CoreCompileInputs.cache
+E:\Dev\Project 1 Dương Vũ Hoàng Việt\Project 1 Dương Vũ Hoàng Việt\obj\Debug\netcoreapp3.1\Project 1 Dương Vũ Hoàng Việt.dll
+E:\Dev\Project 1 Dương Vũ Hoàng Việt\Project 1 Dương Vũ Hoàng Việt\obj\Debug\netcoreapp3.1\Project 1 Dương Vũ Hoàng Việt.pdb
+E:\Dev\Project 1 Dương Vũ Hoàng Việt\Project 1 Dương Vũ Hoàng Việt\obj\Debug\netcoreapp3.1\Project 1 Dương Vũ Hoàng Việt.genruntimeconfig.cache
