@@ -5,24 +5,32 @@ using System.Text;
 
 namespace Project_1_Dương_Vũ_Hoàng_Việt.GUI
 {
-    class GUIHangHoa
+    class HangHoaPresentation
     {
         private HangHoaBUS hanghoaBUS = new HangHoaBUS();
 
         public void MENUHangHoa()
         {
-            Console.ForegroundColor = ConsoleColor.Green; Console.SetCursorPosition(25, 8); Console.WriteLine(" ____________________________________________________________________");
-            Console.ForegroundColor = ConsoleColor.Green; Console.SetCursorPosition(25, 9); Console.WriteLine("|                    Quản Lý Danh Sách Sản Phẩm                      |");
-            Console.ForegroundColor = ConsoleColor.Green; Console.SetCursorPosition(25, 10); Console.WriteLine("|____________________________________________________________________|");
-            Console.ForegroundColor = ConsoleColor.Green; Console.SetCursorPosition(25, 11); Console.WriteLine("|                1. Hiển thị toàn bộ sản phẩm trong kho.             |");
-            Console.ForegroundColor = ConsoleColor.Green; Console.SetCursorPosition(25, 12); Console.WriteLine("|                2. Thêm sản phẩm vào kho.                           |");
-            Console.ForegroundColor = ConsoleColor.Green; Console.SetCursorPosition(25, 13); Console.WriteLine("|                3. Sửa sản phẩm trong kho.                          |");
-            Console.ForegroundColor = ConsoleColor.Green; Console.SetCursorPosition(25, 14); Console.WriteLine("|                4. Xóa sản phẩm trong kho.                          |");
-            Console.ForegroundColor = ConsoleColor.Green; Console.SetCursorPosition(25, 15); Console.WriteLine("|                5. Tìm kiếm sản phẩm trong kho.                     |");
-            Console.ForegroundColor = ConsoleColor.Green; Console.SetCursorPosition(25, 16); Console.WriteLine("|                6. Quay lại.                                        |");
-            Console.ForegroundColor = ConsoleColor.Green; Console.SetCursorPosition(25, 17); Console.WriteLine("|                                                                    |");
-            Console.ForegroundColor = ConsoleColor.Green; Console.SetCursorPosition(25, 18); Console.WriteLine("|____________________________________________________________________|");
-            Console.ForegroundColor = ConsoleColor.Green; Console.SetCursorPosition(48, 17); Console.Write("Chọn công cụ số:"); Console.Beep();
+            Console.SetCursorPosition(25,  5); Console.WriteLine(" ____________________________________________________________________");
+            Console.SetCursorPosition(25,  6); Console.WriteLine("|                                                                    |");
+            Console.SetCursorPosition(25,  7); Console.WriteLine("|____________________________________________________________________|");
+            Console.SetCursorPosition(25,  8); Console.WriteLine("|                                                                    |");
+            Console.SetCursorPosition(25,  9); Console.WriteLine("|                1. Hiển thị toàn bộ sản phẩm trong kho.             |");
+            Console.SetCursorPosition(25, 10); Console.WriteLine("|                                                                    |");
+            Console.SetCursorPosition(25, 11); Console.WriteLine("|                2. Thêm sản phẩm vào kho.                           |");
+            Console.SetCursorPosition(25, 12); Console.WriteLine("|                                                                    |");
+            Console.SetCursorPosition(25, 13); Console.WriteLine("|                3. Sửa sản phẩm trong kho.                          |");
+            Console.SetCursorPosition(25, 14); Console.WriteLine("|                                                                    |");
+            Console.SetCursorPosition(25, 15); Console.WriteLine("|                4. Xóa sản phẩm trong kho.                          |");
+            Console.SetCursorPosition(25, 16); Console.WriteLine("|                                                                    |");
+            Console.SetCursorPosition(25, 17); Console.WriteLine("|                5. Tìm kiếm sản phẩm trong kho.                     |");
+            Console.SetCursorPosition(25, 18); Console.WriteLine("|                                                                    |");
+            Console.SetCursorPosition(25, 19); Console.WriteLine("|                6. Quay lại.                                        |");
+            Console.SetCursorPosition(25, 20); Console.WriteLine("|                                                                    |");
+            Console.SetCursorPosition(25, 21); Console.WriteLine("|                                                                    |");
+            Console.SetCursorPosition(25, 22); Console.WriteLine("|____________________________________________________________________|");
+            Console.ForegroundColor = ConsoleColor.Red; Console.SetCursorPosition(46, 6); Console.WriteLine("MENU Quản Lý Hàng Hóa");
+            Console.ForegroundColor = ConsoleColor.Yellow; Console.SetCursorPosition(48, 21); Console.Write("Chọn công cụ số:"); Console.Beep();
             string chon = Console.ReadLine();
             if (chon == "1")
             {
@@ -51,7 +59,6 @@ namespace Project_1_Dương_Vũ_Hoàng_Việt.GUI
             }
             else if (chon == "6")
             {
-                Console.Beep();
                 return;
             }
             Console.Clear();
@@ -60,11 +67,14 @@ namespace Project_1_Dương_Vũ_Hoàng_Việt.GUI
         public void HienThiHangHoa()
         {
             Console.Clear();
-            Console.SetCursorPosition(43,8);
+            Console.SetCursorPosition(43, 8);
             Console.WriteLine("DANH SÁCH SẢN PHẨM TRONG KHO");
-            foreach(string dl in hanghoaBUS.DanhSachSP())
+            int i = 9;
+            foreach (string dulieu in hanghoaBUS.DanhSachSP())
             {
-                Console.WriteLine(dl);
+                Console.SetCursorPosition(43, i);
+                Console.WriteLine(dulieu);
+                i++;
             }
         }
         public void Themsp()
@@ -127,7 +137,10 @@ namespace Project_1_Dương_Vũ_Hoàng_Việt.GUI
         }
         public void TimKiemSP()
         {
-
+            Console.Clear();
+            Console.SetCursorPosition(43, 9); Console.Beep();
+            Console.Write("Nhập Mã SP cần tìm:"); string masp = Console.ReadLine();
+            //hanghoaBUS.TimKiem(masp);
         }
     }
 }

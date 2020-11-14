@@ -6,15 +6,15 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-      "Project 1 Dương Vũ Hoàng Việt/1.0.0": {
+      "Đồ Án 1 _ Dương Vũ Hoàng Việt/1.0.0": {
         "runtime": {
-          "Project 1 Dương Vũ Hoàng Việt.dll": {}
+          "Đồ Án 1 _ Dương Vũ Hoàng Việt.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "Project 1 Dương Vũ Hoàng Việt/1.0.0": {
+    "Đồ Án 1 _ Dương Vũ Hoàng Việt/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

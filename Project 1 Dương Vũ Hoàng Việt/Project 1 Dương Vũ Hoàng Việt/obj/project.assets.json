@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Dev\\Project 1 Dương Vũ Hoàng Việt\\Project 1 Dương Vũ Hoàng Việt\\Project 1 Dương Vũ Hoàng Việt.csproj",
-      "projectName": "Project 1 Dương Vũ Hoàng Việt",
-      "projectPath": "E:\\Dev\\Project 1 Dương Vũ Hoàng Việt\\Project 1 Dương Vũ Hoàng Việt\\Project 1 Dương Vũ Hoàng Việt.csproj",
+      "projectUniqueName": "E:\\Developer\\Đồ Án 1 _ Dương Vũ Hoàng Việt\\Đồ Án 1 _ Dương Vũ Hoàng Việt\\Đồ Án 1 _ Dương Vũ Hoàng Việt.csproj",
+      "projectName": "Đồ Án 1 _ Dương Vũ Hoàng Việt",
+      "projectPath": "E:\\Developer\\Đồ Án 1 _ Dương Vũ Hoàng Việt\\Đồ Án 1 _ Dương Vũ Hoàng Việt\\Đồ Án 1 _ Dương Vũ Hoàng Việt.csproj",
       "packagesPath": "C:\\Users\\Teiv Hoang\\.nuget\\packages\\",
-      "outputPath": "E:\\Dev\\Project 1 Dương Vũ Hoàng Việt\\Project 1 Dương Vũ Hoàng Việt\\obj\\",
+      "outputPath": "E:\\Developer\\Đồ Án 1 _ Dương Vũ Hoàng Việt\\Đồ Án 1 _ Dương Vũ Hoàng Việt\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Teiv Hoang\\AppData\\Roaming\\NuGet\\NuGet.Config",

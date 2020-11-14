@@ -10,11 +10,11 @@ namespace Project_1_Dương_Vũ_Hoàng_Việt.DAL
 
         public void ThemSP(string masp, string tensp, string donvitinh, int dongia, int soluong, int thanhtien)
         {
-            hanghoaDAL.Themsp(masp,tensp,donvitinh,dongia,soluong,thanhtien);
+            hanghoaDAL.Themsp(masp, tensp, donvitinh, dongia, soluong, thanhtien);
         }
         public void Suasp(string masp, string tensp, string donvitinh, int dongia, int soluong, int thanhtien)
         {
-            hanghoaDAL.Suasp(masp,tensp,donvitinh,dongia,soluong,thanhtien);
+            hanghoaDAL.Suasp(masp, tensp, donvitinh, dongia, soluong, thanhtien);
         }
         public void XoaSP(string masp)
         {

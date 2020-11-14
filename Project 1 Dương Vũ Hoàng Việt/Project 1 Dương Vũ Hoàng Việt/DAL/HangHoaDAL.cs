@@ -10,15 +10,16 @@ namespace Project_1_Dương_Vũ_Hoàng_Việt
         private string filename = "hanghoa.txt";
         public HangHoaDAL()
         {
-            
+
         }
         public List<String> DanhSachSP()
         {
-            StreamReader SR =new StreamReader(filename);
+            StreamReader SR = new StreamReader(filename);
             string read;
             List<String> DSSanPham = new List<string>();
-            while ((read = SR.ReadLine()) != null) {
-                if (read==null) Console.WriteLine("Rỗng"); continue;
+            while ((read = SR.ReadLine()) != null)
+            {
+                if (read == null) Console.WriteLine("Rỗng"); continue;
                 string[] plit = read.Split("|");
                 string dulieu = plit[0] + "\t" + plit[1] + "\t" + plit[2] + "\t" + plit[3] + "\t" + plit[4] + "\t" + plit[5];
                 DSSanPham.Add(dulieu);
@@ -26,7 +27,7 @@ namespace Project_1_Dương_Vũ_Hoàng_Việt
             SR.Close();
             return DSSanPham;
         }
-        public void Themsp(string masp,string tensp,string donvitinh,int dongia,int soluong,int thanhtien)
+        public void Themsp(string masp, string tensp, string donvitinh, int dongia, int soluong, int thanhtien)
         {
 
             StreamWriter SW = new StreamWriter(filename, true);
@@ -44,11 +45,11 @@ namespace Project_1_Dương_Vũ_Hoàng_Việt
                 string[] dlhanghoa = read.Split('|');
                 if (dlhanghoa[0] == masp)
                 {
-                    temp += masp + '|' + tensp + '|' + dongia + '|' + soluong + '|' + donvitinh + '|' + thanhtien +"\n";
+                    temp += masp + '|' + tensp + '|' + dongia + '|' + soluong + '|' + donvitinh + '|' + thanhtien + "\n";
                 }
                 else
                 {
-                    temp += read+"\n";
+                    temp += read + "\n";
                 }
             }
             SR.Close();
@@ -85,12 +86,13 @@ namespace Project_1_Dương_Vũ_Hoàng_Việt
                 string[] dlhanghoa = read.Split('|');
                 if (dlhanghoa[0] == masp)
                 {
-                    temp = dlhanghoa[0] + "\t"+ dlhanghoa[1] + "\t" + dlhanghoa[2] + "\t" + dlhanghoa[3] + "\t" + dlhanghoa[4] + "\t" + dlhanghoa[5];
+                    temp = dlhanghoa[0] + "\t" + dlhanghoa[1] + "\t" + dlhanghoa[2] + "\t" + dlhanghoa[3] + "\t" + dlhanghoa[4] + "\t" + dlhanghoa[5];
+                    Console.WriteLine(temp);
                 }
             }
             SR.Close();
             return temp;
         }
-        
+
     }
 }
