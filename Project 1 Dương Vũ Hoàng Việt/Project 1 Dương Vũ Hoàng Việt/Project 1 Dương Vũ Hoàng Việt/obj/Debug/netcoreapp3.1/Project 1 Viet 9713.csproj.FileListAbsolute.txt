@@ -1,0 +1,13 @@
+C:\Users\Teiv Hoang\source\repos\Project 1 Viet 9713\Project 1 Viet 9713\obj\Debug\netcoreapp3.1\Project 1 Viet 9713.csprojAssemblyReference.cache
+C:\Users\Teiv Hoang\source\repos\Project 1 Viet 9713\Project 1 Viet 9713\obj\Debug\netcoreapp3.1\Project 1 Viet 9713.AssemblyInfoInputs.cache
+C:\Users\Teiv Hoang\source\repos\Project 1 Viet 9713\Project 1 Viet 9713\obj\Debug\netcoreapp3.1\Project 1 Viet 9713.AssemblyInfo.cs
+C:\Users\Teiv Hoang\source\repos\Project 1 Viet 9713\Project 1 Viet 9713\obj\Debug\netcoreapp3.1\Project 1 Viet 9713.csproj.CoreCompileInputs.cache
+C:\Users\Teiv Hoang\source\repos\Project 1 Viet 9713\Project 1 Viet 9713\bin\Debug\netcoreapp3.1\Project 1 Viet 9713.exe
+C:\Users\Teiv Hoang\source\repos\Project 1 Viet 9713\Project 1 Viet 9713\bin\Debug\netcoreapp3.1\Project 1 Viet 9713.deps.json
+C:\Users\Teiv Hoang\source\repos\Project 1 Viet 9713\Project 1 Viet 9713\bin\Debug\netcoreapp3.1\Project 1 Viet 9713.runtimeconfig.json
+C:\Users\Teiv Hoang\source\repos\Project 1 Viet 9713\Project 1 Viet 9713\bin\Debug\netcoreapp3.1\Project 1 Viet 9713.runtimeconfig.dev.json
+C:\Users\Teiv Hoang\source\repos\Project 1 Viet 9713\Project 1 Viet 9713\bin\Debug\netcoreapp3.1\Project 1 Viet 9713.dll
+C:\Users\Teiv Hoang\source\repos\Project 1 Viet 9713\Project 1 Viet 9713\bin\Debug\netcoreapp3.1\Project 1 Viet 9713.pdb
+C:\Users\Teiv Hoang\source\repos\Project 1 Viet 9713\Project 1 Viet 9713\obj\Debug\netcoreapp3.1\Project 1 Viet 9713.dll
+C:\Users\Teiv Hoang\source\repos\Project 1 Viet 9713\Project 1 Viet 9713\obj\Debug\netcoreapp3.1\Project 1 Viet 9713.pdb
+C:\Users\Teiv Hoang\source\repos\Project 1 Viet 9713\Project 1 Viet 9713\obj\Debug\netcoreapp3.1\Project 1 Viet 9713.genruntimeconfig.cache
