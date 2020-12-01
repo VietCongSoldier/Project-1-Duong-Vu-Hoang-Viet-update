@@ -43,7 +43,9 @@ namespace Project_1_Viet_9713.Presentation
             Console.Clear();
             if (chon == "1")
             {
+                Console.Beep();
                 HienThiHangHoa();
+                Console.ReadKey();
             }
             else if (chon == "2")
             {
@@ -71,7 +73,6 @@ namespace Project_1_Viet_9713.Presentation
             {
                 return;
             }
-            return;
         }
         public void NhapSP()
         {
@@ -100,17 +101,41 @@ namespace Project_1_Viet_9713.Presentation
             Console.WriteLine("Đã thêm sản phẩm vào kho !");
             hhDLL.ThemSP(hh);
         }
+        public void SuaSP()
+        {
+
+        }
+        public void XoaSP()
+        {
+
+        }
+        public void TimKiemSP()
+        {
+
+        }
         public void HienThiHangHoa()
         {
-            Console.SetCursorPosition(20, 5);
+            Console.SetCursorPosition(40, 2);
             Console.WriteLine("DANH SÁCH HÀNG HÓA TRONG KHO");
             Console.SetCursorPosition(0, 6);
-            Console.WriteLine("Mã Sản Phẩm \t\t Tên Sản Phẩm \t\t Đơn Giá \t\t Số Lượng \t\t Đơn Vị Tính \t\t Thành Tiền");
+            Console.WriteLine("Mã Sản Phẩm \t Tên Sản Phẩm \t\t Đơn Giá \t Số Lượng \t Đơn Vị Tính \t Thành Tiền");
             Console.SetCursorPosition(0, 7);
             List<HangHoa> list = hhDLL.LayDSSanPham();
+            int i = 7;
             foreach (var dulieu in list)
             {
-                Console.WriteLine($"{dulieu.Masp}\t\t{dulieu.Tensp}\t\t{dulieu.Dongia}\t\t{dulieu.Soluong}\t\t{dulieu.Donvitinh}\t\t{dulieu.Thanhtien}");
+                Console.WriteLine($"{dulieu.Masp}");
+                Console.SetCursorPosition(17, i);
+                Console.WriteLine($"{dulieu.Tensp}");
+                Console.SetCursorPosition(41, i);
+                Console.WriteLine($"{dulieu.Dongia}");
+                Console.SetCursorPosition(57, i);
+                Console.WriteLine($"{dulieu.Soluong}");
+                Console.SetCursorPosition(73, i);
+                Console.WriteLine($"{dulieu.Donvitinh}");
+                Console.SetCursorPosition(89, i);
+                Console.WriteLine($"{dulieu.Thanhtien} (vnđ)");
+                i++;
             }
         }
 

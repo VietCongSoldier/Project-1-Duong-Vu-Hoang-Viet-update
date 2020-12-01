@@ -29,7 +29,7 @@ namespace Project_1_Viet_9713.DAL
         }
         public void ThemSP(HangHoa hh)
         {
-            StreamWriter SW = File.CreateText(filename);
+            StreamWriter SW = new StreamWriter(filename,true);
             SW.WriteLine($"{hh.Masp}|{hh.Tensp}|{hh.Dongia}|{hh.Soluong}|{hh.Donvitinh}|{hh.Thanhtien}");
             SW.Close();
         }
