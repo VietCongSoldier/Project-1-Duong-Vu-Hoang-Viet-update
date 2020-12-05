@@ -1,3 +1,5 @@
-TOM|Tom chien|150000|1|dia|150000
-TOM|tom su |70000|4|KG|280000
 GA|Ga trong|75000|30|KG|2250000
+MANG|mang truc|30000|12|KG|360000
+DOXAO|Do xao mang truc|12000|5|KG|60000
+GACON|ga con nau chao|150000|1|con|150000
+GANOI|ga noi cham mam tom|120000|1|con|120000

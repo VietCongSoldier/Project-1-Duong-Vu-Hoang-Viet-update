@@ -10,14 +10,14 @@ namespace Project_1_Viet_9713.BAL
 {
     public class HangHoaBLL:IHangHoaBLL
     {
-        private IHangHoaDAL hhBL = new HangHoaDAL();
+        private IHangHoaDAL hhDAL = new HangHoaDAL();
         public List<HangHoa> LayDSSanPham()
         {
-            return hhBL.LayDSSanPham();
+            return hhDAL.LayDSSanPham();
         }
         public void ThemSP(HangHoa hh)
         {
-            hhBL.ThemSP(hh);
+            hhDAL.ThemSP(hh);
         }
         public void XoaSP(string masp)
         {
@@ -30,11 +30,12 @@ namespace Project_1_Viet_9713.BAL
             if (i<list.Count)
             {
                 list.RemoveAt(i);
-                hhBL.Update(list);
+                hhDAL.Update(list);
             }
             else
             {
-                throw new Exception($"Không tồn tại mã : {masp} !");
+                Console.SetCursorPosition(45, 9);
+                Console.WriteLine($"Mã sản phẩm này không tồn tại !");
             }
         }
         public void SuaSP(HangHoa hh)
@@ -45,15 +46,11 @@ namespace Project_1_Viet_9713.BAL
             {
                 if (list[i].Masp == hh.Masp) break;
             }
-            if (i > list.Count)
+            if (i < list.Count)
             {
                 list.RemoveAt(i);
                 list.Add(hh);
-                hhBL.Update(list);
-            }
-            else
-            {
-                throw new Exception($"Không tồn tại mã sản phẩm này !");
+                hhDAL.Update(list);
             }
         }
         public List<HangHoa> TimKiemSP(HangHoa hh)

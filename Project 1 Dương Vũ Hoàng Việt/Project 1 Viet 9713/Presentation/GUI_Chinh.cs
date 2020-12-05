@@ -11,10 +11,10 @@ namespace Project_1_Viet_9713.Presentation
         public void MENU()
         {
             Console.SetCursorPosition(40, 1); Console.WriteLine("CHƯƠNG TRÌNH QUẢN LÝ KHO NHÀ HÀNG");
-            Console.SetCursorPosition(25, 6); Console.WriteLine("███████████████████████████████████████████████████████████████████████");
-            Console.SetCursorPosition(25, 7); Console.WriteLine("█░                                                                   ░█");
-            Console.SetCursorPosition(25, 8); Console.WriteLine("█░                                                                   ░█");
-            Console.SetCursorPosition(25, 9); Console.WriteLine("█░                                                                   ░█");
+            Console.SetCursorPosition(25, 6);  Console.WriteLine("███████████████████████████████████████████████████████████████████████");
+            Console.SetCursorPosition(25, 7);  Console.WriteLine("█░                                                                   ░█");
+            Console.SetCursorPosition(25, 8);  Console.WriteLine("█░                                                                   ░█");
+            Console.SetCursorPosition(25, 9);  Console.WriteLine("█░                                                                   ░█");
             Console.SetCursorPosition(25, 10); Console.WriteLine("███████████████████████████████████████████████████████████████████████");
             Console.SetCursorPosition(25, 11); Console.WriteLine("█░                                                                   ░█");
             Console.SetCursorPosition(25, 12); Console.WriteLine("█░                                                                   ░█");

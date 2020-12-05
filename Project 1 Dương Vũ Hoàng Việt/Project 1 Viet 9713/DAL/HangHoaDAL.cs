@@ -7,7 +7,7 @@ using Project_1_Viet_9713.DAL.Interface;
 
 namespace Project_1_Viet_9713.DAL
 {
-    class HangHoaDAL:IHangHoaDAL
+    public class HangHoaDAL : IHangHoaDAL
     {
         private string filename="hanghoa.txt";
         public List<HangHoa> LayDSSanPham()

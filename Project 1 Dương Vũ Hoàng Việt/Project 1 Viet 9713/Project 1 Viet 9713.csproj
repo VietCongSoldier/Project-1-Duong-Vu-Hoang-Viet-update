@@ -6,4 +6,8 @@
     <RootNamespace>Project_1_Viet_9713</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Include="..\.editorconfig" Link=".editorconfig" />
+  </ItemGroup>
+
 </Project>
