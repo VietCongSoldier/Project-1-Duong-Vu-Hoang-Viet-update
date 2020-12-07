@@ -11,6 +11,6 @@ namespace Project_1_Viet_9713.BAL.Interface
         void ThemSP(HangHoa hh);
         void XoaSP(string masp);
         void SuaSP(HangHoa hh);
-        List<HangHoa> TimKiemSP(HangHoa hh);
+        void TimKiemSP(string Masp);
     }
 }

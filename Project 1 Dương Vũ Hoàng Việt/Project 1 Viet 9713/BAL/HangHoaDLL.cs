@@ -34,7 +34,7 @@ namespace Project_1_Viet_9713.BAL
             }
             else
             {
-                Console.SetCursorPosition(45, 9);
+                Console.SetCursorPosition(45, 14);
                 Console.WriteLine($"Mã sản phẩm này không tồn tại !");
             }
         }
@@ -53,33 +53,65 @@ namespace Project_1_Viet_9713.BAL
                 hhDAL.Update(list);
             }
         }
-        public List<HangHoa> TimKiemSP(HangHoa hh)
+        public void TimKiemSP(string Masp)
         {
+            int i;
             List<HangHoa> list = LayDSSanPham();
-            List<HangHoa> dskq = new List<HangHoa>();
-            if (string.IsNullOrEmpty(hh.Masp) && string.IsNullOrEmpty(hh.Tensp) && hh.Dongia == 0)
+            for (i = 0; i < list.Count; ++i)
             {
-                dskq = list;
+                if (list[i].Masp == Masp) break;
             }
-            if (!string.IsNullOrEmpty(hh.Tensp))
+            if (i<list.Count)
             {
-                for (int i = 0; i < list.Count; ++i)
-                {
-                    dskq.Add(new HangHoa(list[i]));
-                }
+                Console.Clear();
+                Console.SetCursorPosition(4, 4); Console.WriteLine("████████████████████████████████████████████████████████████████████████████████████████████████████████████████");
+                Console.SetCursorPosition(4, 5); Console.WriteLine("██    Mã SP    █             Tên Sản Phẩm              █   Đơn giá   █ Số lượng █ Đơn vị tính █   Thành Tiền  ██");
+                Console.SetCursorPosition(4, 6); Console.WriteLine("██_____________█_______________________________________█_____________█__________█_____________█_______________██");
+                Console.SetCursorPosition(4, 7); Console.WriteLine("██             █                                       █             █          █             █               ██");
+                Console.SetCursorPosition(4, 8); Console.WriteLine("██             █                                       █             █          █             █               ██");
+                Console.SetCursorPosition(4, 9); Console.WriteLine("██             █                                       █             █          █             █               ██");
+                Console.SetCursorPosition(4, 10);Console.WriteLine("████████████████████████████████████████████████████████████████████████████████████████████████████████████████");
+                Console.SetCursorPosition(7, 8);
+                Console.WriteLine($"{list[i].Masp}");
+                Console.SetCursorPosition(21, 8);
+                Console.WriteLine($"{list[i].Tensp}");
+                Console.SetCursorPosition(61, 8);
+                Console.WriteLine($"{list[i].Dongia}");
+                Console.SetCursorPosition(75, 8);
+                Console.WriteLine($"{list[i].Soluong}");
+                Console.SetCursorPosition(86, 8);
+                Console.WriteLine($"{list[i].Donvitinh}");
+                Console.SetCursorPosition(100, 8);
+                Console.WriteLine($"{list[i].Thanhtien} (vnđ)");
             }
-            else if (hh.Dongia > 0)
+            else
             {
-                for (int i = 0; i < list.Count; ++i)
-                {
-                    if (list[i].Dongia == hh.Dongia)
-                    {
-                        dskq.Add(new HangHoa(list[i]));
-                    }
-                }
+                Console.SetCursorPosition(45, 14);
+                Console.Write("Mã Sản Phẩm này không tồn tại !");
             }
-            else dskq = null;
-            return dskq;
+            //List<HangHoa> dskq = new List<HangHoa>();
+            //if (string.IsNullOrEmpty(hh.Masp) && string.IsNullOrEmpty(hh.Tensp) && hh.Dongia == 0)
+            //{
+            //    dskq = list;
+            //}
+            //if (!string.IsNullOrEmpty(hh.Tensp))
+            //{
+            //    for (int i = 0; i < list.Count; ++i)
+            //    {
+            //        dskq.Add(new HangHoa(list[i]));
+            //    }
+            //}
+            //else if (hh.Dongia > 0)
+            //{
+            //    for (int i = 0; i < list.Count; ++i)
+            //    {
+            //        if (list[i].Dongia == hh.Dongia)
+            //        {
+            //            dskq.Add(new HangHoa(list[i]));
+            //        }
+            //    }
+            //}
+            //else dskq = null;
         }
     }
 }

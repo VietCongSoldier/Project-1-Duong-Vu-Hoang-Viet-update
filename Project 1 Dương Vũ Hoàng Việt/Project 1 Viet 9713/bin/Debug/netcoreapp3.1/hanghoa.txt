@@ -1,5 +1,6 @@
-GA|Ga trong|75000|30|KG|2250000
 MANG|mang truc|30000|12|KG|360000
 DOXAO|Do xao mang truc|12000|5|KG|60000
-GACON|ga con nau chao|150000|1|con|150000
-GANOI|ga noi cham mam tom|120000|1|con|120000
+GA|thangluon|12000|1|nguoi|12000
+TOMSU|tom su|200000|1|KG|200000
+XIDAU|xi dau nhuyen|100000|12|Thung|1200000
+CHO QUAY|thit cho quay|200000|2|KG|400000|

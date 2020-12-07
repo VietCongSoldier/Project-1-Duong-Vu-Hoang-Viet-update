@@ -14,6 +14,7 @@ namespace Project_1_Viet_9713.Entities
         private int soluong;
         private string donvitinh;
         private int thanhtien;
+        private string ngaynhap;
         public HangHoa()
         {
             thanhtien = dongia * soluong;
@@ -87,6 +88,14 @@ namespace Project_1_Viet_9713.Entities
             set
             {
                 thanhtien = value;
+            }
+        }
+        public string Ngaynhap
+        {
+            get{ return ngaynhap; }
+            set
+            {
+                ngaynhap = value;
             }
         }
     }

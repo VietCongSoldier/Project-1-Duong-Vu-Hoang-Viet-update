@@ -20,7 +20,7 @@ namespace Project_1_Viet_9713.DAL
                 if (read != "")
                 {
                     string[] plit = read.Split("|");
-                    list.Add(new HoaDon(plit[0], plit[1], plit[2]));
+                    list.Add(new HoaDon(plit[0], plit[1], plit[2],plit[3],int.Parse(plit[4])));
                 }
                 read = SR.ReadLine();
             }
@@ -28,11 +28,11 @@ namespace Project_1_Viet_9713.DAL
             return list;
         }
 
-        public void ThemHoaDon(HoaDon hd)
+        public void LapHoaDon(HoaDon hd)
         {
             string mahd = "HD" + DateTime.Now.ToString("yyMMddhhmmss");
             StreamWriter SW = new StreamWriter(filename, true);
-            SW.WriteLine($"{hd.Mahoadon}|{hd.Tennvxuatkho}|{hd.Ngayxuat}");
+            SW.WriteLine($"{hd.Mahoadon}|{hd.Tennvxuatkho}|{hd.Ngaynhap}");
             SW.Close();
         }
 

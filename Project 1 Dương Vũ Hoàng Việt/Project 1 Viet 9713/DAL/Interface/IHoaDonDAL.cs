@@ -8,7 +8,7 @@ namespace Project_1_Viet_9713.DAL.Interface
     public interface IHoaDonDAL
     {
         List<HoaDon> LayDSHoaDon();
-        void ThemHoaDon(HoaDon hd);
+        void LapHoaDon(HoaDon hd);
         void Update(List<HoaDon> list);
     }
 }

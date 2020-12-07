@@ -8,21 +8,27 @@ namespace Project_1_Viet_9713.Entities
     {
         private string mahoadon;
         private string tennvxuatkho;
-        private string ngayxuat;
+        private string ngaynhap;
+        private string masp;
+        private int soluong;
         public HoaDon()
         {
         }
-        public HoaDon(string mahoadon, string tennv,string ngayxuat)
+        public HoaDon(string mahoadon, string tennv,string ngayxuat,string masp,int soluong)
         {
             this.mahoadon = mahoadon;
             this.tennvxuatkho = tennvxuatkho;
-            this.ngayxuat = ngayxuat;
+            this.ngaynhap = ngaynhap;
+            this.masp = masp;
+            this.soluong = soluong;
         }
         public HoaDon(HoaDon hd)
         {
             this.mahoadon = hd.mahoadon;
             this.tennvxuatkho = hd.tennvxuatkho;
-            this.ngayxuat = hd.ngayxuat;
+            this.ngaynhap = hd.ngaynhap;
+            this.masp = hd.masp;
+            this.soluong = soluong;
 
         }
         public string Mahoadon
@@ -43,14 +49,31 @@ namespace Project_1_Viet_9713.Entities
                     tennvxuatkho = value;
             }
         }
-        public string Ngayxuat
+        public string Ngaynhap
         {
-            get { return ngayxuat; }
+            get { return ngaynhap; }
             set
             {
                 if (!string.IsNullOrEmpty(value))
-                    ngayxuat = value;
+                    ngaynhap = value;
             }
+        }
+        public string Masp
+        {
+            get { return masp; }
+            set
+            {
+                if (!string.IsNullOrEmpty(value))
+                    masp = value;
+            }
+        }
+        public int Soluong
+        {
+            get { return soluong; }
+            set { if (soluong > 0)
+                    soluong = value;
+            }
+
         }
     }
 }
