@@ -10,10 +10,12 @@ namespace Project_1_Viet_9713.Presentation
 {
     public class HangHoaPresentation
     {
-        private IHangHoaBLL hhDLL = new HangHoaBLL();
+        private IHangHoaBLL hhDLL = new HangHoaDLL();
         public void MENUHangHoa()
         {
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.SetCursorPosition(47, 1); Console.WriteLine("QUẢN LÝ HÀNG HÓA TRONG KHO");
+            Console.ForegroundColor = ConsoleColor.Gray;
             Console.SetCursorPosition(25, 6); Console.WriteLine("███████████████████████████████████████████████████████████████████████");
             Console.SetCursorPosition(25, 7); Console.WriteLine("█░                                                                   ░█");
             Console.SetCursorPosition(25, 8); Console.WriteLine("█░                                                                   ░█");
@@ -36,7 +38,9 @@ namespace Project_1_Viet_9713.Presentation
             Console.SetCursorPosition(25, 25); Console.WriteLine("█░                                                                   ░█");
             Console.SetCursorPosition(25, 26); Console.WriteLine("█░                                                                   ░█");
             Console.SetCursorPosition(25, 27); Console.WriteLine("███████████████████████████████████████████████████████████████████████");
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.SetCursorPosition(50, 8); Console.WriteLine("MENU QUẢN LÝ HÀNG HÓA");
+            Console.ForegroundColor = ConsoleColor.White;
             string chon;
             Console.SetCursorPosition(48, 25); Console.Write("Chọn chức năng số:"); Console.Beep();
             chon = Console.ReadLine();
@@ -80,6 +84,7 @@ namespace Project_1_Viet_9713.Presentation
         {
             HangHoa hh = new HangHoa();
             List<HangHoa> listhh = new List<HangHoa>();
+            HoaDonNhapPresentation hdPre = new HoaDonNhapPresentation();
         string chon;
             do
             {
@@ -109,18 +114,48 @@ namespace Project_1_Viet_9713.Presentation
                 Console.SetCursorPosition(35, 27); Console.WriteLine("██                                                  ██");
                 Console.SetCursorPosition(35, 28); Console.WriteLine("██████████████████████████████████████████████████████");
                 Console.SetCursorPosition(54, 8); Console.WriteLine("MENU Nhập sản phẩm");
-                do {
+                List<HangHoa> listtest = hhDLL.LayDSSanPham();
+                do
+                {
                     Console.SetCursorPosition(45, 12); Console.Beep();
-                    Console.Write("Nhập Mã SP:"); hh.Masp = Console.ReadLine();
-                } while (string.IsNullOrEmpty(hh.Masp));
+                    Console.Write("Nhập Mã Loại:"); hh.Maloai = Console.ReadLine();
+                } while (string.IsNullOrEmpty(hh.Maloai));
+                bool testmasp=false;
+                do
+                {
+                    do
+                    {
+                        Console.SetCursorPosition(45, 12); Console.Beep();
+                        Console.Write("Nhập Mã SP:"); hh.Masp = Console.ReadLine();
+                    } while (string.IsNullOrEmpty(hh.Masp));
+                    for (int i = 0; i < listtest.Count; i++)
+                    {
+                        if (listtest[i].Masp == hh.Masp)
+                        {
+                            testmasp = true;
+                            Console.SetCursorPosition(50, 24);
+                            Console.WriteLine("Mã SP đã tồn tại !");
+                            break;
+                        }
+                    }
+                } while (testmasp == true);
                 do {
                     Console.SetCursorPosition(45, 14); Console.Beep();
                     Console.Write("Nhập Tên SP:"); hh.Tensp = Console.ReadLine();
                 } while (string.IsNullOrEmpty(hh.Tensp));
-                do { 
-                Console.SetCursorPosition(45, 16); Console.Beep();
-                Console.Write("Đơn giá:"); hh.Dongia = int.Parse(Console.ReadLine());
-                } while (hh.Dongia<0);
+                bool test;
+                do {
+
+                    Console.SetCursorPosition(45, 16); Console.Beep();
+                    Console.Write("Đơn giá:");
+                    hh.Dongia = int.Parse(Console.ReadLine());
+                    //int.TryParse(hh.Dongia, out test);
+                    //if ()
+                    //{
+
+                    //}
+
+                } while (hh.Dongia < 0);
                 do { 
                 Console.SetCursorPosition(45, 18); Console.Beep();
                 Console.Write("Số lượng:"); hh.Soluong = int.Parse(Console.ReadLine());
@@ -148,34 +183,36 @@ namespace Project_1_Viet_9713.Presentation
         }
         public void HienThiHoaDonNhap(List<HangHoa> listhh)
         {
-            //string ngaynhap = "Ngày nhập :" + DateTime.Now.ToString("dd/MM/yyyy | HH:mm:ss");
+            string ngaynhap = "Ngày nhập :" + DateTime.Now.ToString("dd/MM/yyyy | HH:mm:ss");
             Console.Clear();
             Console.SetCursorPosition(40, 1); Console.WriteLine("CHƯƠNG TRÌNH QUẢN LÝ KHO NHÀ HÀNG");
-            Console.SetCursorPosition(1, 6);  Console.WriteLine("██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████");
-            Console.SetCursorPosition(1, 7);  Console.WriteLine("██                                                                                                                  ██");
-            Console.SetCursorPosition(1, 8);  Console.WriteLine("██                                                                                                                  ██");
-            Console.SetCursorPosition(1, 9);  Console.WriteLine("██                                                                                                                  ██");
+            Console.SetCursorPosition(1,  6); Console.WriteLine("██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████");
+            Console.SetCursorPosition(1,  7); Console.WriteLine("██                                                                                                                  ██");
+            Console.SetCursorPosition(1,  8); Console.WriteLine("██                                                                                                                  ██");
+            Console.SetCursorPosition(1,  9); Console.WriteLine("██                                                                                                                  ██");
             Console.SetCursorPosition(1, 10); Console.WriteLine("██                                                                                                                  ██");
             Console.SetCursorPosition(1, 11); Console.WriteLine("██ Tên đơn vị : Công ty TNHH Phúc Lâm Viên                                                                          ██");
             Console.SetCursorPosition(1, 12); Console.WriteLine("██ Địa chỉ : Đường Nguyễn Văn Linh, TX Mỹ Hào, Hưng Yên                                                             ██");
             Console.SetCursorPosition(1, 13); Console.WriteLine("██ Mã số thuế : 0901055759                                                                                          ██");
             Console.SetCursorPosition(1, 14); Console.WriteLine("██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████");
-            Console.SetCursorPosition(1, 15); Console.WriteLine("██ STT █    Mã SP    █    Tên Sản Phẩm                       █   Đơn giá   █ Số lượng █ Đơn vị tính █   Thành Tiền  ██");
-            Console.SetCursorPosition(1, 16); Console.WriteLine("██_____█_____________█_______________________________________█_____________█__________█_____________█_______________██");
-            Console.SetCursorPosition(1, 17); Console.WriteLine("██  1  █             █                                       █             █          █             █               ██");
-            Console.SetCursorPosition(1, 18); Console.WriteLine("██  2  █             █                                       █             █          █             █               ██");
-            Console.SetCursorPosition(1, 19); Console.WriteLine("██  3  █             █                                       █             █          █             █               ██");
-            Console.SetCursorPosition(1, 20); Console.WriteLine("██  4  █             █                                       █             █          █             █               ██");
-            Console.SetCursorPosition(1, 21); Console.WriteLine("██  5  █             █                                       █             █          █             █               ██");
-            Console.SetCursorPosition(1, 22); Console.WriteLine("██  6  █             █                                       █             █          █             █               ██");
-            Console.SetCursorPosition(1, 23); Console.WriteLine("██  7  █             █                                       █             █          █             █               ██");
-            Console.SetCursorPosition(1, 24); Console.WriteLine("██  8  █             █                                       █             █          █             █               ██");
-            Console.SetCursorPosition(1, 25); Console.WriteLine("██  9  █             █                                       █             █          █             █               ██");
-            Console.SetCursorPosition(1, 26); Console.WriteLine("██ 10  █_____________█_______________________________________█_____________█__________█_____________█_______________██");
-            Console.SetCursorPosition(1, 27); Console.WriteLine("██Tổng █             █                                       █             █          █             █               ██");
+            Console.SetCursorPosition(1, 15); Console.WriteLine("██ STT █     Mã SP    █    Tên Sản Phẩm                      █   Đơn giá   █ Số lượng █ Đơn vị tính █   Thành Tiền  ██");
+            Console.SetCursorPosition(1, 16); Console.WriteLine("██_____█______________█______________________________________█_____________█__________█_____________█_______________██");
+            Console.SetCursorPosition(1, 17); Console.WriteLine("██  1  █              █                                      █             █          █             █               ██");
+            Console.SetCursorPosition(1, 18); Console.WriteLine("██  2  █              █                                      █             █          █             █               ██");
+            Console.SetCursorPosition(1, 19); Console.WriteLine("██  3  █              █                                      █             █          █             █               ██");
+            Console.SetCursorPosition(1, 20); Console.WriteLine("██  4  █              █                                      █             █          █             █               ██");
+            Console.SetCursorPosition(1, 21); Console.WriteLine("██  5  █              █                                      █             █          █             █               ██");
+            Console.SetCursorPosition(1, 22); Console.WriteLine("██  6  █              █                                      █             █          █             █               ██");
+            Console.SetCursorPosition(1, 23); Console.WriteLine("██  7  █              █                                      █             █          █             █               ██");
+            Console.SetCursorPosition(1, 24); Console.WriteLine("██  8  █              █                                      █             █          █             █               ██");
+            Console.SetCursorPosition(1, 25); Console.WriteLine("██  9  █              █                                      █             █          █             █               ██");
+            Console.SetCursorPosition(1, 26); Console.WriteLine("██ 10  █______________█______________________________________█_____________█__________█_____________█_______________██");
+            Console.SetCursorPosition(1, 27); Console.WriteLine("██Tổng █                                                                                                            ██");
             Console.SetCursorPosition(1, 28); Console.WriteLine("██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████");
             Console.SetCursorPosition(50, 8); Console.WriteLine("HÓA ĐƠN NHẬP KHO");
+            Console.SetCursorPosition(70, 13); Console.WriteLine(ngaynhap);
             int i;
+            int tong=0;
             for (i = 0; i < listhh.Count; i++)
             {
                 Console.SetCursorPosition(10, i + 17);
@@ -191,8 +228,11 @@ namespace Project_1_Viet_9713.Presentation
                 Console.SetCursorPosition(103, i + 17);
                 Console.WriteLine(listhh[i].Thanhtien);
                 Console.SetCursorPosition(78, 13); Console.WriteLine(listhh[i].Ngaynhap);
+                tong += listhh[i].Thanhtien;
             }
+            Console.SetCursorPosition(103, 27); Console.WriteLine(tong);
         }
+
         public void SuaSP()
         {
             Console.Clear();
@@ -224,16 +264,16 @@ namespace Project_1_Viet_9713.Presentation
             string Maspmoi,Tenspmoi,Donvitinhmoi;
             int Dongiamoi, Soluongmoi,Thanhtienmoi;
             List<HangHoa> list = hhDLL.LayDSSanPham();
-            string masp;
+            string maspcu;
             do { 
             Console.SetCursorPosition(45, 12);
             Console.Write("Nhập mã sản phẩm cần sửa :");
-            masp = Console.ReadLine();
-            } while (string.IsNullOrEmpty(masp));
+            maspcu = Console.ReadLine();
+            } while (string.IsNullOrEmpty(maspcu));
             int i = 0;
             for (i = 0; i < list.Count; i++)
             {
-                if (list[i].Masp == masp) break;
+                if (list[i].Masp == maspcu) break;
             }
             HangHoa hh = new HangHoa(list[i]);
             if (i < list.Count)
@@ -264,7 +304,7 @@ namespace Project_1_Viet_9713.Presentation
                 Console.SetCursorPosition(45, 26); Console.Beep();
                 Console.WriteLine($"Đã sửa sản phẩm thành công !");
                 hh.Masp = Maspmoi; hh.Tensp = Tenspmoi; hh.Dongia = Dongiamoi; hh.Soluong = Soluongmoi; hh.Donvitinh = Donvitinhmoi; hh.Thanhtien = Thanhtienmoi;
-                hhDLL.SuaSP(hh);
+                hhDLL.SuaSP(hh,maspcu);
             }
             else
             {
@@ -343,34 +383,36 @@ namespace Project_1_Viet_9713.Presentation
         }
         public void HienThiHangHoa()
         {
-            Console.SetCursorPosition(40, 2);
+            Console.SetCursorPosition(50, 1);
             Console.WriteLine("DANH SÁCH HÀNG HÓA TRONG KHO");
             List<HangHoa> list = hhDLL.LayDSSanPham();
             int i = 7;
-            Console.SetCursorPosition(1, 4);  Console.WriteLine("██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████");
-            Console.SetCursorPosition(1, 5);  Console.WriteLine("██ STT █    Mã SP    █             Tên Sản Phẩm              █   Đơn giá   █ Số lượng █ Đơn vị tính █   Thành Tiền  ██");
-            Console.SetCursorPosition(1, 6);  Console.WriteLine("██_____█_____________█_______________________________________█_____________█__________█_____________█_______________██");
-            Console.SetCursorPosition(1, 7);  Console.WriteLine("██  1  █             █                                       █             █          █             █               ██");
-            Console.SetCursorPosition(1, 8);  Console.WriteLine("██  2  █             █                                       █             █          █             █               ██");
-            Console.SetCursorPosition(1, 9);  Console.WriteLine("██  3  █             █                                       █             █          █             █               ██");
-            Console.SetCursorPosition(1, 10); Console.WriteLine("██  4  █             █                                       █             █          █             █               ██");
-            Console.SetCursorPosition(1, 11); Console.WriteLine("██  5  █             █                                       █             █          █             █               ██");
-            Console.SetCursorPosition(1, 12); Console.WriteLine("██  6  █             █                                       █             █          █             █               ██");
-            Console.SetCursorPosition(1, 13); Console.WriteLine("██  7  █             █                                       █             █          █             █               ██");
-            Console.SetCursorPosition(1, 14); Console.WriteLine("██  8  █             █                                       █             █          █             █               ██");
-            Console.SetCursorPosition(1, 15); Console.WriteLine("██  9  █             █                                       █             █          █             █               ██");
-            Console.SetCursorPosition(1, 16); Console.WriteLine("██ 10  █             █                                       █             █          █             █               ██");
-            Console.SetCursorPosition(1, 17); Console.WriteLine("██ 11  █             █                                       █             █          █             █               ██");
-            Console.SetCursorPosition(1, 18); Console.WriteLine("██ 12  █             █                                       █             █          █             █               ██");
-            Console.SetCursorPosition(1, 19); Console.WriteLine("██ 13  █             █                                       █             █          █             █               ██");
-            Console.SetCursorPosition(1, 20); Console.WriteLine("██ 14  █             █                                       █             █          █             █               ██");
-            Console.SetCursorPosition(1, 21); Console.WriteLine("██ 15  █             █                                       █             █          █             █               ██");
-            Console.SetCursorPosition(1, 22); Console.WriteLine("██ 16  █             █                                       █             █          █             █               ██");
-            Console.SetCursorPosition(1, 23); Console.WriteLine("██ 17  █             █                                       █             █          █             █               ██");
-            Console.SetCursorPosition(1, 24); Console.WriteLine("██ 18  █             █                                       █             █          █             █               ██");
-            Console.SetCursorPosition(1, 25); Console.WriteLine("██ 19  █             █                                       █             █          █             █               ██");
-            Console.SetCursorPosition(1, 26); Console.WriteLine("██ 20  █             █                                       █             █          █             █               ██");
-            Console.SetCursorPosition(1, 27); Console.WriteLine("██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████");
+            Console.SetCursorPosition(1, 3);  Console.WriteLine("██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████");
+            Console.SetCursorPosition(1, 4);  Console.WriteLine("██ STT █    Mã SP    █             Tên Sản Phẩm              █   Đơn giá   █ Số lượng █ Đơn vị tính █   Thành Tiền  ██");
+            Console.SetCursorPosition(1, 5);  Console.WriteLine("██_____█_____________█_______________________________________█_____________█__________█_____________█_______________██");
+            Console.SetCursorPosition(1, 6);  Console.WriteLine("██  1  █             █                                       █             █          █             █               ██");
+            Console.SetCursorPosition(1, 7);  Console.WriteLine("██  2  █             █                                       █             █          █             █               ██");
+            Console.SetCursorPosition(1, 8);  Console.WriteLine("██  3  █             █                                       █             █          █             █               ██");
+            Console.SetCursorPosition(1, 9);  Console.WriteLine("██  4  █             █                                       █             █          █             █               ██");
+            Console.SetCursorPosition(1, 10); Console.WriteLine("██  5  █             █                                       █             █          █             █               ██");
+            Console.SetCursorPosition(1, 11); Console.WriteLine("██  6  █             █                                       █             █          █             █               ██");
+            Console.SetCursorPosition(1, 12); Console.WriteLine("██  7  █             █                                       █             █          █             █               ██");
+            Console.SetCursorPosition(1, 13); Console.WriteLine("██  8  █             █                                       █             █          █             █               ██");
+            Console.SetCursorPosition(1, 14); Console.WriteLine("██  9  █             █                                       █             █          █             █               ██");
+            Console.SetCursorPosition(1, 15); Console.WriteLine("██ 10  █             █                                       █             █          █             █               ██");
+            Console.SetCursorPosition(1, 16); Console.WriteLine("██ 11  █             █                                       █             █          █             █               ██");
+            Console.SetCursorPosition(1, 17); Console.WriteLine("██ 12  █             █                                       █             █          █             █               ██");
+            Console.SetCursorPosition(1, 18); Console.WriteLine("██ 13  █             █                                       █             █          █             █               ██");
+            Console.SetCursorPosition(1, 19); Console.WriteLine("██ 14  █             █                                       █             █          █             █               ██");
+            Console.SetCursorPosition(1, 20); Console.WriteLine("██ 15  █             █                                       █             █          █             █               ██");
+            Console.SetCursorPosition(1, 21); Console.WriteLine("██ 16  █             █                                       █             █          █             █               ██");
+            Console.SetCursorPosition(1, 22); Console.WriteLine("██ 17  █             █                                       █             █          █             █               ██");
+            Console.SetCursorPosition(1, 23); Console.WriteLine("██ 18  █             █                                       █             █          █             █               ██");
+            Console.SetCursorPosition(1, 24); Console.WriteLine("██ 19  █             █                                       █             █          █             █               ██");
+            Console.SetCursorPosition(1, 25); Console.WriteLine("██ 20  █             █                                       █             █          █             █               ██");
+            Console.SetCursorPosition(1, 26); Console.WriteLine("██ 21  █             █                                       █             █          █             █               ██");
+            Console.SetCursorPosition(1, 27); Console.WriteLine("██ 22  █             █                                       █             █          █             █               ██");
+            Console.SetCursorPosition(1, 28); Console.WriteLine("██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████");
             foreach (var dulieu in list)
             {
                 Console.SetCursorPosition(10, i);

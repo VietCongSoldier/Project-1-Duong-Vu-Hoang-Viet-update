@@ -8,6 +8,7 @@ namespace Project_1_Viet_9713.Entities
 {
     public class HangHoa
     {
+        private string maloai;
         private string masp;
         private string tensp;
         private int dongia;
@@ -19,8 +20,9 @@ namespace Project_1_Viet_9713.Entities
         {
             thanhtien = dongia * soluong;
         }
-        public HangHoa(string masp,string tensp,int dongia,int soluong,string donvitinh,int thanhtien)
+        public HangHoa(string maloai,string masp,string tensp,int dongia,int soluong,string donvitinh,int thanhtien)
         {
+            this.maloai = maloai;
             this.masp = masp;
             this.tensp = tensp;
             this.dongia = dongia;
@@ -30,12 +32,22 @@ namespace Project_1_Viet_9713.Entities
         }
         public HangHoa(HangHoa sp)
         {
+            this.maloai = sp.maloai;
             this.masp = sp.masp;
             this.tensp = sp.tensp;
             this.dongia = sp.dongia;
             this.soluong = sp.soluong;
             this.donvitinh = sp.donvitinh;
             this.thanhtien = sp.thanhtien;
+        }
+        public string Maloai
+        {
+            get { return maloai; }
+            set
+            {
+                if (!string.IsNullOrEmpty(value))
+                    maloai = value;
+            }
         }
         public string Masp
         {

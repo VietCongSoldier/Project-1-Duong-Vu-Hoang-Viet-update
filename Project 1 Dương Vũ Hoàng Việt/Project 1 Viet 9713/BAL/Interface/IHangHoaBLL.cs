@@ -10,7 +10,7 @@ namespace Project_1_Viet_9713.BAL.Interface
         List<HangHoa> LayDSSanPham();
         void ThemSP(HangHoa hh);
         void XoaSP(string masp);
-        void SuaSP(HangHoa hh);
+        void SuaSP(HangHoa hh, string maspcu);
         void TimKiemSP(string Masp);
     }
 }

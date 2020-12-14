@@ -8,7 +8,7 @@ using Project_1_Viet_9713.DAL.Interface;
 
 namespace Project_1_Viet_9713.BAL
 {
-    public class HangHoaBLL:IHangHoaBLL
+    public class HangHoaDLL:IHangHoaBLL
     {
         private IHangHoaDAL hhDAL = new HangHoaDAL();
         public List<HangHoa> LayDSSanPham()
@@ -38,16 +38,36 @@ namespace Project_1_Viet_9713.BAL
                 Console.WriteLine($"Mã sản phẩm này không tồn tại !");
             }
         }
-        public void SuaSP(HangHoa hh)
+        public void SuaSP(HangHoa hh,string maspcu)
         {
             int i;
             List<HangHoa> list = LayDSSanPham();
             for (i=0;i<list.Count;++i)
             {
-                if (list[i].Masp == hh.Masp) break;
+                if (list[i].Masp == maspcu) break;
             }
             if (i < list.Count)
             {
+                Console.Clear();
+                Console.SetCursorPosition(4, 4); Console.WriteLine("████████████████████████████████████████████████████████████████████████████████████████████████████████████████");
+                Console.SetCursorPosition(4, 5); Console.WriteLine("██    Mã SP    █             Tên Sản Phẩm              █   Đơn giá   █ Số lượng █ Đơn vị tính █   Thành Tiền  ██");
+                Console.SetCursorPosition(4, 6); Console.WriteLine("██_____________█_______________________________________█_____________█__________█_____________█_______________██");
+                Console.SetCursorPosition(4, 7); Console.WriteLine("██             █                                       █             █          █             █               ██");
+                Console.SetCursorPosition(4, 8); Console.WriteLine("██             █                                       █             █          █             █               ██");
+                Console.SetCursorPosition(4, 9); Console.WriteLine("██             █                                       █             █          █             █               ██");
+                Console.SetCursorPosition(4, 10); Console.WriteLine("████████████████████████████████████████████████████████████████████████████████████████████████████████████████");
+                Console.SetCursorPosition(7, 8);
+                Console.WriteLine($"{list[i].Masp}");
+                Console.SetCursorPosition(21, 8);
+                Console.WriteLine($"{list[i].Tensp}");
+                Console.SetCursorPosition(61, 8);
+                Console.WriteLine($"{list[i].Dongia}");
+                Console.SetCursorPosition(75, 8);
+                Console.WriteLine($"{list[i].Soluong}");
+                Console.SetCursorPosition(86, 8);
+                Console.WriteLine($"{list[i].Donvitinh}");
+                Console.SetCursorPosition(100, 8);
+                Console.WriteLine($"{list[i].Thanhtien} (vnđ)");
                 list.RemoveAt(i);
                 list.Add(hh);
                 hhDAL.Update(list);

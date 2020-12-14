@@ -20,20 +20,23 @@ namespace Project_1_Viet_9713.Presentation
             Console.SetCursorPosition(25, 12); Console.WriteLine("█░                                                                   ░█");
             Console.SetCursorPosition(25, 13); Console.WriteLine("█░              1. Quản lý danh sách sản phẩm trong kho.             ░█");
             Console.SetCursorPosition(25, 14); Console.WriteLine("█░                                                                   ░█");
-            Console.SetCursorPosition(25, 15); Console.WriteLine("█░              2. Quản lý hóa đơn nhập xuất kho.                    ░█");
+            Console.SetCursorPosition(25, 15); Console.WriteLine("█░              2. Quản lý hóa đơn.                                  ░█");
             Console.SetCursorPosition(25, 16); Console.WriteLine("█░                                                                   ░█");
-            Console.SetCursorPosition(25, 17); Console.WriteLine("█░              3. Hiển thị toàn bộ sản phẩm trong kho.              ░█");
+            Console.SetCursorPosition(25, 17); Console.WriteLine("█░              3. Quản lý nhân viên.                                ░█");
             Console.SetCursorPosition(25, 18); Console.WriteLine("█░                                                                   ░█");
-            Console.SetCursorPosition(25, 19); Console.WriteLine("█░              4. Thoát.                                            ░█");
+            Console.SetCursorPosition(25, 19); Console.WriteLine("█░              4. Hiển thị toàn bộ sản phẩm trong kho.              ░█");
             Console.SetCursorPosition(25, 20); Console.WriteLine("█░                                                                   ░█");
-            Console.SetCursorPosition(25, 21); Console.WriteLine("█░                                                                   ░█");
+            Console.SetCursorPosition(25, 21); Console.WriteLine("█░              5. Thoát.                                            ░█");
             Console.SetCursorPosition(25, 22); Console.WriteLine("█░                                                                   ░█");
-            Console.SetCursorPosition(25, 23); Console.WriteLine("███████████████████████████████████████████████████████████████████████");
+            Console.SetCursorPosition(25, 23); Console.WriteLine("█░                                                                   ░█");
+            Console.SetCursorPosition(25, 24); Console.WriteLine("█░                                                                   ░█");
+            Console.SetCursorPosition(25, 25); Console.WriteLine("███████████████████████████████████████████████████████████████████████");
             Console.SetCursorPosition(56, 8); Console.WriteLine("MENU");
             string chon;
-            Console.SetCursorPosition(48, 21); Console.Write("Chọn công cụ số:"); Console.Beep();
+            Console.SetCursorPosition(48, 23); Console.Write("Chọn công cụ số:"); Console.Beep();
             chon = Console.ReadLine();
             HangHoaPresentation hhPre = new HangHoaPresentation();
+            NhanVienPresentation nvPre = new NhanVienPresentation();
             Console.Clear();
             if (chon == "1")
             {
@@ -48,10 +51,16 @@ namespace Project_1_Viet_9713.Presentation
             else if (chon == "3")
             {
                 Console.Beep();
-                hhPre.HienThiHangHoa();
+                nvPre.MENUNhanVien();
                 Console.ReadKey();
             }
             else if (chon == "4")
+            {
+                Console.Beep();
+                hhPre.HienThiHangHoa();
+                Console.ReadKey();
+            }
+            else if (chon == "5")
             {
                 Console.Beep(); Console.Beep();
                 return;
