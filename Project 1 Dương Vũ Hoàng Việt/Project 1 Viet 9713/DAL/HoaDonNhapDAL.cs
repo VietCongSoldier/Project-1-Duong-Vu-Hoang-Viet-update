@@ -9,7 +9,7 @@ namespace Project_1_Viet_9713.DAL
 {
     public class HoaDonNhapDAL : IHoaDonNhapDAL
     {
-        private string filename = "HoaDon.txt";
+        private string filename = "hoadonnhap.txt";
         public List<HoaDonNhap> LayDSHoaDon()
         {
             List<HoaDonNhap> list = new List<HoaDonNhap>();

@@ -91,29 +91,29 @@ namespace Project_1_Viet_9713.Presentation
             {
                 Console.Clear();
                 Console.SetCursorPosition(44, 1); Console.WriteLine("CHƯƠNG TRÌNH QUẢN LÝ KHO NHÀ HÀNG");
-                Console.SetCursorPosition(35, 6);  Console.WriteLine("██████████████████████████████████████████████████████");
-                Console.SetCursorPosition(35, 7);  Console.WriteLine("██                                                  ██");
-                Console.SetCursorPosition(35, 8);  Console.WriteLine("██                                                  ██");
-                Console.SetCursorPosition(35, 9);  Console.WriteLine("██                                                  ██");
-                Console.SetCursorPosition(35, 10); Console.WriteLine("██████████████████████████████████████████████████████");
-                Console.SetCursorPosition(35, 11); Console.WriteLine("██                                                  ██");
-                Console.SetCursorPosition(35, 12); Console.WriteLine("██                                                  ██");
-                Console.SetCursorPosition(35, 13); Console.WriteLine("██                                                  ██");
-                Console.SetCursorPosition(35, 14); Console.WriteLine("██                                                  ██");
-                Console.SetCursorPosition(35, 15); Console.WriteLine("██                                                  ██");
-                Console.SetCursorPosition(35, 16); Console.WriteLine("██                                                  ██");
-                Console.SetCursorPosition(35, 17); Console.WriteLine("██                                                  ██");
-                Console.SetCursorPosition(35, 18); Console.WriteLine("██                                                  ██");
-                Console.SetCursorPosition(35, 19); Console.WriteLine("██                                                  ██");
-                Console.SetCursorPosition(35, 20); Console.WriteLine("██                                                  ██");
-                Console.SetCursorPosition(35, 21); Console.WriteLine("██                                                  ██");
-                Console.SetCursorPosition(35, 22); Console.WriteLine("██                                                  ██");
-                Console.SetCursorPosition(35, 23); Console.WriteLine("██                                                  ██");
-                Console.SetCursorPosition(35, 24); Console.WriteLine("██                                                  ██");
-                Console.SetCursorPosition(35, 25); Console.WriteLine("██                                                  ██");
-                Console.SetCursorPosition(35, 26); Console.WriteLine("██                                                  ██");
-                Console.SetCursorPosition(35, 27); Console.WriteLine("██                                                  ██");
-                Console.SetCursorPosition(35, 28); Console.WriteLine("██████████████████████████████████████████████████████");
+                Console.SetCursorPosition(35, 6);  Console.WriteLine("█████████████████████████████████████████████████████████████");
+                Console.SetCursorPosition(35, 7);  Console.WriteLine("██                                                         ██");
+                Console.SetCursorPosition(35, 8);  Console.WriteLine("██                                                         ██");
+                Console.SetCursorPosition(35, 9);  Console.WriteLine("██                                                         ██");
+                Console.SetCursorPosition(35, 10); Console.WriteLine("█████████████████████████████████████████████████████████████");
+                Console.SetCursorPosition(35, 11); Console.WriteLine("██                                                         ██");
+                Console.SetCursorPosition(35, 12); Console.WriteLine("██                                                         ██");
+                Console.SetCursorPosition(35, 13); Console.WriteLine("██                                                         ██");
+                Console.SetCursorPosition(35, 14); Console.WriteLine("██                                                         ██");
+                Console.SetCursorPosition(35, 15); Console.WriteLine("██                                                         ██");
+                Console.SetCursorPosition(35, 16); Console.WriteLine("██                                                         ██");
+                Console.SetCursorPosition(35, 17); Console.WriteLine("██                                                         ██");
+                Console.SetCursorPosition(35, 18); Console.WriteLine("██                                                         ██");
+                Console.SetCursorPosition(35, 19); Console.WriteLine("██                                                         ██");
+                Console.SetCursorPosition(35, 20); Console.WriteLine("██                                                         ██");
+                Console.SetCursorPosition(35, 21); Console.WriteLine("██                                                         ██");
+                Console.SetCursorPosition(35, 22); Console.WriteLine("██                                                         ██");
+                Console.SetCursorPosition(35, 23); Console.WriteLine("██                                                         ██");
+                Console.SetCursorPosition(35, 24); Console.WriteLine("██                                                         ██");
+                Console.SetCursorPosition(35, 25); Console.WriteLine("██                                                         ██");
+                Console.SetCursorPosition(35, 26); Console.WriteLine("██                                                         ██");
+                Console.SetCursorPosition(35, 27); Console.WriteLine("██                                                         ██");
+                Console.SetCursorPosition(35, 28); Console.WriteLine("█████████████████████████████████████████████████████████████");
                 Console.SetCursorPosition(54, 8); Console.WriteLine("MENU Nhập nhân viên");
                 List<NhanVien> listtest = nvDLL.LayDSNhanVien();
                 bool testmanv = false;
@@ -140,13 +140,12 @@ namespace Project_1_Viet_9713.Presentation
                     Console.SetCursorPosition(45, 14); Console.Beep();
                     Console.Write("Nhập Tên NV:"); nv.Hoten = Console.ReadLine();
                 } while (string.IsNullOrEmpty(nv.Hoten));
-                bool test;
                 do
                 {
                     Console.SetCursorPosition(45, 16); Console.Beep();
                     Console.Write("Năm Sinh:");
                     nv.Namsinh = int.Parse(Console.ReadLine());
-                } while ((2020-nv.Namsinh)>=18&&nv.Namsinh>0);
+                } while ((2020-nv.Namsinh)<18&&nv.Namsinh<0);
                 do
                 {
                     Console.SetCursorPosition(45, 18); Console.Beep();
@@ -235,7 +234,7 @@ namespace Project_1_Viet_9713.Presentation
                 {
                     Console.SetCursorPosition(45, 18); Console.Beep();
                     Console.Write("Năm sinh mới:"); Namsinhmoi = int.Parse(Console.ReadLine());
-                } while ((2020 - Namsinhmoi) >= 18 && Namsinhmoi >0);
+                } while ((2020 - Namsinhmoi) < 18 && Namsinhmoi < 0);
                 do
                 {
                     Console.SetCursorPosition(45, 20); Console.Beep();
@@ -375,7 +374,7 @@ namespace Project_1_Viet_9713.Presentation
                 Console.WriteLine($"{dulieu.Gioitinh}");
                 Console.SetCursorPosition(89, i);
                 Console.WriteLine($"{dulieu.Sdt}");
-                Console.SetCursorPosition(104, i);
+                Console.SetCursorPosition(105, i);
                 Console.WriteLine($"{dulieu.Chucvu}");
                 i++;
             }

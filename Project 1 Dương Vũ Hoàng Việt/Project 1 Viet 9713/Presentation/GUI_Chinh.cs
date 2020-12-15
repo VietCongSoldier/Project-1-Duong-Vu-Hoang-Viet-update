@@ -50,7 +50,6 @@ namespace Project_1_Viet_9713.Presentation
             }
             else if (chon == "3")
             {
-                Console.Beep();
                 nvPre.MENUNhanVien();
                 Console.ReadKey();
             }

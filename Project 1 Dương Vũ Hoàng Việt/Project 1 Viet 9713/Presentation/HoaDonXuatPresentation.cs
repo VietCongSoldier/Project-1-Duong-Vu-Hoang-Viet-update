@@ -63,7 +63,7 @@ namespace Project_1_Viet_9713.Presentation
         }
         public void HienThiDSHoaDonXuat()
         {
-
+             
         }
         public void HienThiHoaDonXuat(HoaDonXuat hd, List<HangHoa> listhh)
         {

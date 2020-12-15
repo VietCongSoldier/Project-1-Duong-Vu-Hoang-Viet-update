@@ -9,17 +9,17 @@ using Project_1_Viet_9713.BAL.Interface;
 
 namespace Project_1_Viet_9713.BAL
 {
-    public class HoaDonBLL : IHoaDonNhapBLL
+    public class HoaDonNhapBLL : IHoaDonNhapBLL
     {
-        private IHoaDonNhapDAL hdDAL = new HoaDonNhapDAL();
+        private IHoaDonNhapDAL hdnDAL = new HoaDonNhapDAL();
         public void LapHoaDon(HoaDonNhap hd)
         {
-            hdDAL.LapHoaDon(hd);
+            hdnDAL.LapHoaDon(hd);
         }
 
         public List<HoaDonNhap> LayDSHoaDon()
         {
-            return hdDAL.LayDSHoaDon();
+            return hdnDAL.LayDSHoaDon();
         }
 
         public void SuaHD(HoaDonNhap hd, string mahdcu)
@@ -34,7 +34,7 @@ namespace Project_1_Viet_9713.BAL
             {
                 list.RemoveAt(i);
                 list.Add(hd);
-                hdDAL.Update(list);
+                hdnDAL.Update(list);
             }
         }
 
@@ -68,7 +68,7 @@ namespace Project_1_Viet_9713.BAL
             if (i < list.Count)
             {
                 list.RemoveAt(i);
-                hdDAL.Update(list);
+                hdnDAL.Update(list);
             }
             else
             {
@@ -76,7 +76,7 @@ namespace Project_1_Viet_9713.BAL
                 Console.WriteLine($"Mã hóa đơn này không tồn tại !");
             }
         }
-        public void LayDSSPTuHoaDon(HoaDonNhap hd)
+        public void LayDSSPTuHoaDon(HoaDonNhap hdn)
         {
 
         }

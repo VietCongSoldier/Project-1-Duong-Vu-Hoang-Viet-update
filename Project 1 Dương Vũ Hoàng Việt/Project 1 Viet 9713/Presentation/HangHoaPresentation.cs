@@ -143,17 +143,11 @@ namespace Project_1_Viet_9713.Presentation
                     Console.SetCursorPosition(45, 14); Console.Beep();
                     Console.Write("Nhập Tên SP:"); hh.Tensp = Console.ReadLine();
                 } while (string.IsNullOrEmpty(hh.Tensp));
-                bool test;
                 do {
 
                     Console.SetCursorPosition(45, 16); Console.Beep();
                     Console.Write("Đơn giá:");
                     hh.Dongia = int.Parse(Console.ReadLine());
-                    //int.TryParse(hh.Dongia, out test);
-                    //if ()
-                    //{
-
-                    //}
 
                 } while (hh.Dongia < 0);
                 do { 
