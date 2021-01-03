@@ -55,7 +55,7 @@ namespace Project_1_Viet_9713.BAL
                 Console.SetCursorPosition(4, 7); Console.WriteLine("██             █                                       █             █          █             █               ██");
                 Console.SetCursorPosition(4, 8); Console.WriteLine("██             █                                       █             █          █             █               ██");
                 Console.SetCursorPosition(4, 9); Console.WriteLine("██             █                                       █             █          █             █               ██");
-                Console.SetCursorPosition(4, 10); Console.WriteLine("████████████████████████████████████████████████████████████████████████████████████████████████████████████████");
+                Console.SetCursorPosition(4,10); Console.WriteLine("████████████████████████████████████████████████████████████████████████████████████████████████████████████████");
                 Console.SetCursorPosition(7, 8);
                 Console.WriteLine($"{list[i].Masp}");
                 Console.SetCursorPosition(21, 8);

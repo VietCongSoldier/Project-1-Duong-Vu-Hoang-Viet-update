@@ -8,24 +8,17 @@ using Project_1_Viet_9713.DAL.Interface;
 
 namespace Project_1_Viet_9713.BAL
 {
-    class HoaDonXuatDLL : IHoaDonXuatBLL
+    public class HoaDonXuatDLL : IHoaDonXuatBLL
     {
         private IHoaDonXuatDAL hdxDAL = new HoaDonXuatDAL();
         public void LapHoaDon(HoaDonXuat hdx)
         {
             hdxDAL.LapHoaDonXuat(hdx);
         }
-
         public List<HoaDonXuat> LayDSHoaDonXuat()
         {
-            return hdxDAL.LayDSHoaDonXuatKho();
+            return hdxDAL.LayDSHoaDonXuat();
         }
-
-        public void LayDSSPTuHoaDon(HoaDonXuat hd)
-        {
-            
-        }
-
         public void SuaHD(HoaDonXuat hdx, string mahdcu)
         {
             int i;

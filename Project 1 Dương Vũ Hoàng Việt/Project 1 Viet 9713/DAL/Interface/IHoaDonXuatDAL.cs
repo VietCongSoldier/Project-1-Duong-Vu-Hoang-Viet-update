@@ -5,9 +5,9 @@ using Project_1_Viet_9713.Entities;
 
 namespace Project_1_Viet_9713.DAL.Interface
 {
-    interface IHoaDonXuatDAL
+    public interface IHoaDonXuatDAL
     {
-        List<HoaDonXuat> LayDSHoaDonXuatKho();
+        List<HoaDonXuat> LayDSHoaDonXuat();
         void LapHoaDonXuat(HoaDonXuat hdx);
         void Update(List<HoaDonXuat> list);
     }

@@ -7,13 +7,12 @@ using Project_1_Viet_9713.DAL.Interface;
 
 namespace Project_1_Viet_9713.BAL.Interface
 {
-    interface IHoaDonXuatBLL
+    public interface IHoaDonXuatBLL
     {
         List<HoaDonXuat> LayDSHoaDonXuat();
         void LapHoaDon(HoaDonXuat hd);
         void XoaHD(string mahd);
         void SuaHD(HoaDonXuat hd, string mahdcu);
         void TimKiemHD(string Mahd);
-        void LayDSSPTuHoaDon(HoaDonXuat hd);
     }
 }
