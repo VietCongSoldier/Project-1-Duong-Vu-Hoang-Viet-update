@@ -133,7 +133,6 @@ namespace Project_1_Viet_9713.Presentation
                                 Console.ForegroundColor = ConsoleColor.Red;
                                 Console.WriteLine("Mã SP đã tồn tại !");
                                 Console.ForegroundColor = ConsoleColor.Gray;
-                                Console.ReadKey();
                             }
                         }
                     } while (testmasp == true);
@@ -308,19 +307,12 @@ namespace Project_1_Viet_9713.Presentation
                     Console.SetCursorPosition(100, 8);
                     Console.WriteLine($"{listhh[i].Thanhtien} (vnđ)");
                 }
-                Console.Clear();
                 Console.SetCursorPosition(44, 1); Console.WriteLine("CHƯƠNG TRÌNH QUẢN LÝ KHO NHÀ HÀNG");
-                Console.SetCursorPosition(35, 6); Console.WriteLine("██████████████████████████████████████████████████████");
-                Console.SetCursorPosition(35, 7); Console.WriteLine("██                                                  ██");
-                Console.SetCursorPosition(35, 8); Console.WriteLine("██                                                  ██");
-                Console.SetCursorPosition(35, 9); Console.WriteLine("██                                                  ██");
-                Console.SetCursorPosition(35, 10); Console.WriteLine("██████████████████████████████████████████████████████");
-                Console.SetCursorPosition(35, 11); Console.WriteLine("██                                                  ██");
-                Console.SetCursorPosition(35, 12); Console.WriteLine("██                                                  ██");
+                Console.SetCursorPosition(35, 12); Console.WriteLine("██████████████████████████████████████████████████████");
                 Console.SetCursorPosition(35, 13); Console.WriteLine("██                                                  ██");
                 Console.SetCursorPosition(35, 14); Console.WriteLine("██                                                  ██");
                 Console.SetCursorPosition(35, 15); Console.WriteLine("██                                                  ██");
-                Console.SetCursorPosition(35, 16); Console.WriteLine("██                                                  ██");
+                Console.SetCursorPosition(35, 16); Console.WriteLine("██████████████████████████████████████████████████████");
                 Console.SetCursorPosition(35, 17); Console.WriteLine("██                                                  ██");
                 Console.SetCursorPosition(35, 18); Console.WriteLine("██                                                  ██");
                 Console.SetCursorPosition(35, 19); Console.WriteLine("██                                                  ██");
@@ -332,8 +324,14 @@ namespace Project_1_Viet_9713.Presentation
                 Console.SetCursorPosition(35, 25); Console.WriteLine("██                                                  ██");
                 Console.SetCursorPosition(35, 26); Console.WriteLine("██                                                  ██");
                 Console.SetCursorPosition(35, 27); Console.WriteLine("██                                                  ██");
-                Console.SetCursorPosition(35, 28); Console.WriteLine("██████████████████████████████████████████████████████");
-                Console.SetCursorPosition(45, 8); Console.WriteLine("SỬA THÔNG TIN SẢN PHẨM TRONG KHO");
+                Console.SetCursorPosition(35, 28); Console.WriteLine("██                                                  ██");
+                Console.SetCursorPosition(35, 29); Console.WriteLine("██                                                  ██");
+                Console.SetCursorPosition(35, 30); Console.WriteLine("██                                                  ██");
+                Console.SetCursorPosition(35, 31); Console.WriteLine("██                                                  ██");
+                Console.SetCursorPosition(35, 32); Console.WriteLine("██                                                  ██");
+                Console.SetCursorPosition(35, 33); Console.WriteLine("██                                                  ██");
+                Console.SetCursorPosition(35, 34); Console.WriteLine("██████████████████████████████████████████████████████");
+                Console.SetCursorPosition(45, 14); Console.WriteLine("SỬA THÔNG TIN SẢN PHẨM TRONG KHO");
                 i = 0;
                 for (i = 0; i < list.Count; i++)
                 {
@@ -344,33 +342,33 @@ namespace Project_1_Viet_9713.Presentation
                 {
                     do
                     {
-                        Console.SetCursorPosition(45, 14); Console.Beep();
+                        Console.SetCursorPosition(45, 18); Console.Beep();
                         Console.Write("Nhập Mã SP mới:"); Maspmoi = Console.ReadLine();
                     } while (string.IsNullOrEmpty(Maspmoi));
                     do
                     {
-                        Console.SetCursorPosition(45, 16); Console.Beep();
+                        Console.SetCursorPosition(45, 20); Console.Beep();
                         Console.Write("Nhập Tên SP mới:"); Tenspmoi = Console.ReadLine();
                     } while (string.IsNullOrEmpty(Tenspmoi));
                     do
                     {
-                        Console.SetCursorPosition(45, 18); Console.Beep();
+                        Console.SetCursorPosition(45, 22); Console.Beep();
                         Console.Write("Đơn giá mới:"); Dongiamoi = int.Parse(Console.ReadLine());
                     } while (Dongiamoi < 0);
                     do
                     {
-                        Console.SetCursorPosition(45, 20); Console.Beep();
+                        Console.SetCursorPosition(45, 24); Console.Beep();
                         Console.Write("Số lượng mới:"); Soluongmoi = int.Parse(Console.ReadLine());
                     } while (Soluongmoi < 0);
                     do
                     {
-                        Console.SetCursorPosition(45, 22); Console.Beep();
+                        Console.SetCursorPosition(45, 26); Console.Beep();
                         Console.Write("Đơn vị tính mới:"); Donvitinhmoi = Console.ReadLine();
                     } while (string.IsNullOrEmpty(Donvitinhmoi));
-                    Console.SetCursorPosition(45, 24); Console.Beep();
+                    Console.SetCursorPosition(45, 28); Console.Beep();
                     Thanhtienmoi = Soluongmoi * Dongiamoi;
                     Console.WriteLine($"Thành tiền:{Thanhtienmoi} (VNĐ)");
-                    Console.SetCursorPosition(45, 26); Console.Beep();
+                    Console.SetCursorPosition(45, 30); Console.Beep();
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine($"Đã sửa sản phẩm thành công !");
                     Console.ForegroundColor = ConsoleColor.Gray;
@@ -380,7 +378,7 @@ namespace Project_1_Viet_9713.Presentation
                 else
                 {
                     Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.SetCursorPosition(45, 26);
+                    Console.SetCursorPosition(45, 30);
                     Console.WriteLine("Không tồn tại mã sản phẩm này !");
                     Console.ForegroundColor = ConsoleColor.Gray;
                 }

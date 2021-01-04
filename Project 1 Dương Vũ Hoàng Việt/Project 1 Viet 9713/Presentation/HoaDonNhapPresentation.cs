@@ -10,7 +10,7 @@ namespace Project_1_Viet_9713.Presentation
 {
     class HoaDonNhapPresentation
     {
-        IHoaDonNhapBLL hdnBLL = new HoaDonNhapBLL();
+        IHoaDonNhapBLL hdnDLL = new HoaDonNhapDLL();
         public void MENUHoaDonNhap()
         {
             try
@@ -50,9 +50,28 @@ namespace Project_1_Viet_9713.Presentation
                 else if (chon == "2")
                 {
                     Console.Beep();
+                    NhapHD();
                     Console.ReadKey();
                 }
                 else if (chon == "3")
+                {
+                    Console.Beep();
+                    SuaHD();
+                    Console.ReadKey();
+                }
+                else if (chon == "4")
+                {
+                    Console.Beep();
+                    XoaHD();
+                    Console.ReadKey();
+                }
+                else if (chon == "5")
+                {
+                    Console.Beep();
+                    TimKiemHD();
+                    Console.ReadKey();
+                }
+                else if (chon == "6")
                 {
                     Console.Beep(); Console.Beep();
                     return;
@@ -68,7 +87,7 @@ namespace Project_1_Viet_9713.Presentation
             {
                 Console.SetCursorPosition(50, 1);
                 Console.WriteLine("DANH SÁCH HÓA ĐƠN NHẬP TRONG KHO");
-                List<HoaDonNhap> list = hdnBLL.LayDSHoaDon();
+                List<HoaDonNhap> list = hdnDLL.LayDSHoaDon();
                 int i = 7;
                 Console.SetCursorPosition(1, 3); Console.WriteLine("██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████");
                 Console.SetCursorPosition(1, 4); Console.WriteLine("██ STT █    Mã HD    █            Tên Nhân Viên              █       Mã NV       █ Số Điện Thoại █    Ngày Nhập     ██");
@@ -113,7 +132,7 @@ namespace Project_1_Viet_9713.Presentation
             }
             catch { Console.Clear(); Console.ForegroundColor = ConsoleColor.Red; Console.SetCursorPosition(34, 15); Console.WriteLine("Oopps !!!   Something Wrong - Please restart now !"); }
         }
-        public void HienThiHoaDonNhap(HoaDonNhap hd,List<HangHoa> listhh)
+        public void HienThiHoaDonNhap(HoaDonNhap hd, List<HangHoa> listhh)
         {
             try
             {
@@ -160,6 +179,339 @@ namespace Project_1_Viet_9713.Presentation
                     Console.WriteLine(listhh[i].Thanhtien);
                     Console.SetCursorPosition(78, 13);
                     Console.WriteLine(listhh[i].Ngaynhap);
+                }
+            }
+            catch { Console.Clear(); Console.ForegroundColor = ConsoleColor.Red; Console.SetCursorPosition(34, 15); Console.WriteLine("Oopps !!!   Something Wrong - Please restart now !"); }
+        }
+        public void NhapHD()
+        {
+            HoaDonNhap hdn = new HoaDonNhap();
+            List<HoaDonNhap> listhdn = new List<HoaDonNhap>();
+            string chon;
+            do
+            {
+                List<HoaDonNhap> listtest = hdnDLL.LayDSHoaDon();
+                bool testmahd = false;
+                do
+                {
+                    Console.Clear();
+                    Console.SetCursorPosition(35, 12); Console.WriteLine("██████████████████████████████████████████████████████");
+                    Console.SetCursorPosition(35, 13); Console.WriteLine("██                                                  ██");
+                    Console.SetCursorPosition(35, 14); Console.WriteLine("██                                                  ██");
+                    Console.SetCursorPosition(35, 15); Console.WriteLine("██                                                  ██");
+                    Console.SetCursorPosition(35, 16); Console.WriteLine("██                                                  ██");
+                    Console.SetCursorPosition(35, 17); Console.WriteLine("██                                                  ██");
+                    Console.SetCursorPosition(35, 18); Console.WriteLine("██████████████████████████████████████████████████████");
+                    do
+                    {
+                        Console.SetCursorPosition(45, 14); Console.Beep();
+                        Console.Write("Nhập Mã HDN:"); hdn.Mahoadon = Console.ReadLine();
+                    } while (string.IsNullOrEmpty(hdn.Mahoadon));
+                    for (int i = 0; i < listtest.Count; i++)
+                    {
+                        if (hdn.Mahoadon == listtest[i].Mahoadon)
+                        {
+                            testmahd = true;
+                            Console.SetCursorPosition(50, 16);
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("Mã HD đã tồn tại !");
+                            Console.ForegroundColor = ConsoleColor.Gray;
+                        }
+                    }
+                } while (testmahd == true);
+                Console.Clear();
+                Console.SetCursorPosition(44, 1); Console.WriteLine("CHƯƠNG TRÌNH QUẢN LÝ KHO NHÀ HÀNG");
+                Console.SetCursorPosition(35, 6); Console.WriteLine("██████████████████████████████████████████████████████");
+                Console.SetCursorPosition(35, 7); Console.WriteLine("██                                                  ██");
+                Console.SetCursorPosition(35, 8); Console.WriteLine("██                                                  ██");
+                Console.SetCursorPosition(35, 9); Console.WriteLine("██                                                  ██");
+                Console.SetCursorPosition(35, 10); Console.WriteLine("██████████████████████████████████████████████████████");
+                Console.SetCursorPosition(35, 11); Console.WriteLine("██                                                  ██");
+                Console.SetCursorPosition(35, 12); Console.WriteLine("██                                                  ██");
+                Console.SetCursorPosition(35, 13); Console.WriteLine("██                                                  ██");
+                Console.SetCursorPosition(35, 14); Console.WriteLine("██                                                  ██");
+                Console.SetCursorPosition(35, 15); Console.WriteLine("██                                                  ██");
+                Console.SetCursorPosition(35, 16); Console.WriteLine("██                                                  ██");
+                Console.SetCursorPosition(35, 17); Console.WriteLine("██                                                  ██");
+                Console.SetCursorPosition(35, 18); Console.WriteLine("██                                                  ██");
+                Console.SetCursorPosition(35, 19); Console.WriteLine("██                                                  ██");
+                Console.SetCursorPosition(35, 20); Console.WriteLine("██                                                  ██");
+                Console.SetCursorPosition(35, 21); Console.WriteLine("██                                                  ██");
+                Console.SetCursorPosition(35, 22); Console.WriteLine("██                                                  ██");
+                Console.SetCursorPosition(35, 23); Console.WriteLine("██                                                  ██");
+                Console.SetCursorPosition(35, 24); Console.WriteLine("██████████████████████████████████████████████████████");
+                Console.SetCursorPosition(54, 8); Console.WriteLine("MENU NHẬP HÓA ĐƠN");
+                do
+                {
+                    Console.SetCursorPosition(45, 12); Console.Beep();
+                    Console.Write("Nhập Mã HD:"); hdn.Mahoadon = Console.ReadLine();
+                } while (string.IsNullOrEmpty(hdn.Mahoadon));
+                do
+                {
+                    Console.SetCursorPosition(45, 14); Console.Beep();
+                    Console.Write("Nhập Mã Nhân Viên:");
+                    hdn.Manv = Console.ReadLine();
+
+                } while (string.IsNullOrEmpty(hdn.Manv));
+                do
+                {
+                    Console.SetCursorPosition(45, 16); Console.Beep();
+                    Console.Write("Số điện thoại :"); hdn.Sdt = Console.ReadLine();
+                } while (hdn.Sdt.Length <= 10);
+                hdn.Ngaynhap = DateTime.Now.ToString("dd/MM/yyyy | HH:mm:ss");
+                hdnDLL.LapHoaDon(hdn);
+                listhdn.Add(new HoaDonNhap(hdn));
+                Console.SetCursorPosition(45, 20); Console.Beep();
+                Console.WriteLine("Đã thêm hóa đơn !");
+                Console.SetCursorPosition(40, 22); Console.Beep();
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.Write("Bạn có muốn thêm hđ khác không (Y/N) ? :");
+                Console.ForegroundColor = ConsoleColor.Gray;
+                do
+                {
+                    chon = Console.ReadLine();
+                } while (chon == "");
+            } while (chon == "y" || chon == "Y");
+            hdn.Ngaynhap = "Ngày nhập :" + DateTime.Now.ToString("dd/MM/yyyy | HH:mm:ss");
+        }
+        public void SuaHD()
+        {
+            try
+            {
+                Console.SetCursorPosition(35, 6); Console.WriteLine("██████████████████████████████████████████████████████");
+                Console.SetCursorPosition(35, 7); Console.WriteLine("██                                                  ██");
+                Console.SetCursorPosition(35, 8); Console.WriteLine("██                                                  ██");
+                Console.SetCursorPosition(35, 9); Console.WriteLine("██                                                  ██");
+                Console.SetCursorPosition(35, 10); Console.WriteLine("██████████████████████████████████████████████████████");
+                string Mahd, Manv, Tennv, Sdt;
+                List<HoaDonNhap> list = hdnDLL.LayDSHoaDon();
+                string mahdcu;
+                do
+                {
+                    Console.SetCursorPosition(45, 8);
+                    Console.Write("Nhập mã hóa đơn cần sửa :");
+                    mahdcu = Console.ReadLine();
+                } while (string.IsNullOrEmpty(mahdcu));
+                int i;
+                List<HoaDonNhap> listhh = hdnDLL.LayDSHoaDon();
+                for (i = 0; i < list.Count; ++i)
+                {
+                    if (list[i].Mahoadon == mahdcu) break;
+                }
+                if (i < list.Count)
+                {
+                    Console.Clear();
+                    Console.SetCursorPosition(4, 4); Console.WriteLine("████████████████████████████████████████████████████████████████████████████████████████████████████████████████");
+                    Console.SetCursorPosition(4, 5); Console.WriteLine("██      Mã HD      █             Tên Nhân Viên             █    Mã NV   █     SĐT     █       Ngày Nhập       ██");
+                    Console.SetCursorPosition(4, 6); Console.WriteLine("██_________________█_______________________________________█____________█_____________█_______________________██");
+                    Console.SetCursorPosition(4, 7); Console.WriteLine("██                 █                                       █            █             █                       ██");
+                    Console.SetCursorPosition(4, 8); Console.WriteLine("██                 █                                       █            █             █                       ██");
+                    Console.SetCursorPosition(4, 9); Console.WriteLine("██                 █                                       █            █             █                       ██");
+                    Console.SetCursorPosition(4, 10);Console.WriteLine("████████████████████████████████████████████████████████████████████████████████████████████████████████████████");
+                    Console.SetCursorPosition(7, 8);
+                    Console.WriteLine($"{listhh[i].Mahoadon}");
+                    Console.SetCursorPosition(25, 8);
+                    Console.WriteLine($"{listhh[i].Tennv}");
+                    Console.SetCursorPosition(65, 8);
+                    Console.WriteLine($"{listhh[i].Manv}");
+                    Console.SetCursorPosition(78, 8);
+                    Console.WriteLine($"{listhh[i].Sdt}");
+                    Console.SetCursorPosition(100, 8);
+                    Console.WriteLine($"{listhh[i].Ngaynhap}");
+                }
+                Console.SetCursorPosition(44, 1); Console.WriteLine("CHƯƠNG TRÌNH QUẢN LÝ KHO NHÀ HÀNG");
+                Console.SetCursorPosition(35, 12); Console.WriteLine("██████████████████████████████████████████████████████");
+                Console.SetCursorPosition(35, 13); Console.WriteLine("██                                                  ██");
+                Console.SetCursorPosition(35, 14); Console.WriteLine("██                                                  ██");
+                Console.SetCursorPosition(35, 15); Console.WriteLine("██                                                  ██");
+                Console.SetCursorPosition(35, 16); Console.WriteLine("██████████████████████████████████████████████████████");
+                Console.SetCursorPosition(35, 17); Console.WriteLine("██                                                  ██");
+                Console.SetCursorPosition(35, 18); Console.WriteLine("██                                                  ██");
+                Console.SetCursorPosition(35, 19); Console.WriteLine("██                                                  ██");
+                Console.SetCursorPosition(35, 20); Console.WriteLine("██                                                  ██");
+                Console.SetCursorPosition(35, 21); Console.WriteLine("██                                                  ██");
+                Console.SetCursorPosition(35, 22); Console.WriteLine("██                                                  ██");
+                Console.SetCursorPosition(35, 23); Console.WriteLine("██                                                  ██");
+                Console.SetCursorPosition(35, 24); Console.WriteLine("██                                                  ██");
+                Console.SetCursorPosition(35, 25); Console.WriteLine("██                                                  ██");
+                Console.SetCursorPosition(35, 26); Console.WriteLine("██                                                  ██");
+                Console.SetCursorPosition(35, 27); Console.WriteLine("██                                                  ██");
+                Console.SetCursorPosition(35, 28); Console.WriteLine("██                                                  ██");
+                Console.SetCursorPosition(35, 29); Console.WriteLine("██                                                  ██");
+                Console.SetCursorPosition(35, 30); Console.WriteLine("██████████████████████████████████████████████████████");
+                Console.SetCursorPosition(45, 14); Console.WriteLine("SỬA THÔNG TIN HÓA ĐƠN");
+                i = 0;
+                for (i = 0; i < list.Count; i++)
+                {
+                    if (list[i].Mahoadon == mahdcu) break;
+                }
+                HoaDonNhap hd = new HoaDonNhap(list[i]);
+                if (i < list.Count)
+                {
+                    do
+                    {
+                        Console.SetCursorPosition(45, 18); Console.Beep();
+                        Console.Write("Nhập Mã HD mới:"); Mahd = Console.ReadLine();
+                    } while (string.IsNullOrEmpty(Mahd));
+                    do
+                    {
+                        Console.SetCursorPosition(45, 20); Console.Beep();
+                        Console.Write("Nhập Mã NV mới :"); Manv = Console.ReadLine();
+                    } while (string.IsNullOrEmpty(Manv));
+                    do
+                    {
+                        Console.SetCursorPosition(45, 22); Console.Beep();
+                        Console.Write("Tên NV mới:"); Tennv =Console.ReadLine();
+                    } while (string.IsNullOrEmpty(Tennv));
+                    do
+                    {
+                        Console.SetCursorPosition(45, 24); Console.Beep();
+                        Console.Write("SDT mới:"); Sdt = Console.ReadLine();
+                    } while (string.IsNullOrEmpty(Sdt));
+                    Console.SetCursorPosition(45, 26); Console.Beep();
+                        Console.Write("Ngày nhập : "+ hd.Ngaynhap);
+                    Console.SetCursorPosition(45, 28); Console.Beep();
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("Đã sửa hóa đơn thành công !");
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    hd.Mahoadon = Mahd;hd.Manv = Manv;hd.Tennv = Tennv;
+                    hdnDLL.SuaHD(hd, mahdcu);
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.SetCursorPosition(45, 26);
+                    Console.WriteLine("Không tồn tại mã hóa đơn này !");
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                }
+            }
+            catch { Console.Clear(); Console.ForegroundColor = ConsoleColor.Red; Console.SetCursorPosition(34, 15); Console.WriteLine("Oopps !!!   Something Wrong - Please restart now !"); }
+        }
+        public void XoaHD()
+        {
+            try
+            {
+                string chon;
+                do
+                {
+                    Console.Clear();
+                    Console.SetCursorPosition(44, 1); Console.WriteLine("CHƯƠNG TRÌNH QUẢN LÝ KHO NHÀ HÀNG");
+                    Console.SetCursorPosition(35, 6); Console.WriteLine("█████████████████████████████████████████████████████████");
+                    Console.SetCursorPosition(35, 7); Console.WriteLine("██                                                     ██");
+                    Console.SetCursorPosition(35, 8); Console.WriteLine("██                                                     ██");
+                    Console.SetCursorPosition(35, 9); Console.WriteLine("██                                                     ██");
+                    Console.SetCursorPosition(35, 10); Console.WriteLine("█████████████████████████████████████████████████████████");
+                    Console.SetCursorPosition(35, 11); Console.WriteLine("██                                                     ██");
+                    Console.SetCursorPosition(35, 12); Console.WriteLine("██                                                     ██");
+                    Console.SetCursorPosition(35, 13); Console.WriteLine("██                                                     ██");
+                    Console.SetCursorPosition(35, 14); Console.WriteLine("██                                                     ██");
+                    Console.SetCursorPosition(35, 15); Console.WriteLine("██                                                     ██");
+                    Console.SetCursorPosition(35, 16); Console.WriteLine("██                                                     ██");
+                    Console.SetCursorPosition(35, 17); Console.WriteLine("██                                                     ██");
+                    Console.SetCursorPosition(35, 18); Console.WriteLine("█████████████████████████████████████████████████████████");
+                    Console.SetCursorPosition(53, 8); Console.WriteLine("XÓA HÓA ĐƠN TRONG KHO");
+                    Console.SetCursorPosition(48, 12); Console.Beep();
+                    Console.Write("Nhập Mã HD muốn xóa :"); string Mahd = Console.ReadLine();
+                    Console.SetCursorPosition(48, 14); Console.Beep();
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("Đã Xóa !");
+                    hdnDLL.XoaHD(Mahd);
+                    Console.SetCursorPosition(38, 16);
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.Write("Bạn có muốn xóa thêm hóa đơn khác không ? (Y/N) :");
+
+                    do
+                    {
+                        chon = Console.ReadLine();
+                    } while (chon == "");
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                } while (chon == "Y" || chon == "y");
+            }
+            catch { Console.Clear(); Console.ForegroundColor = ConsoleColor.Red; Console.SetCursorPosition(34, 15); Console.WriteLine("Oopps !!!   Something Wrong - Please restart now !"); }
+        }
+        public void TimKiemHD()
+        {
+            try
+            {
+                char chon;
+                do
+                {
+                    Console.Clear();
+                    Console.SetCursorPosition(44, 1); Console.WriteLine("CHƯƠNG TRÌNH QUẢN LÝ KHO NHÀ HÀNG");
+                    Console.SetCursorPosition(35, 6); Console.WriteLine("█████████████████████████████████████████████████████████");
+                    Console.SetCursorPosition(35, 7); Console.WriteLine("██                                                     ██");
+                    Console.SetCursorPosition(35, 8); Console.WriteLine("██                                                     ██");
+                    Console.SetCursorPosition(35, 9); Console.WriteLine("██                                                     ██");
+                    Console.SetCursorPosition(35, 10); Console.WriteLine("█████████████████████████████████████████████████████████");
+                    Console.SetCursorPosition(35, 11); Console.WriteLine("██                                                     ██");
+                    Console.SetCursorPosition(35, 12); Console.WriteLine("██                                                     ██");
+                    Console.SetCursorPosition(35, 13); Console.WriteLine("██                                                     ██");
+                    Console.SetCursorPosition(35, 14); Console.WriteLine("██                                                     ██");
+                    Console.SetCursorPosition(35, 15); Console.WriteLine("██                                                     ██");
+                    Console.SetCursorPosition(35, 16); Console.WriteLine("█████████████████████████████████████████████████████████");
+                    Console.SetCursorPosition(53, 8); Console.WriteLine("TÌM KIẾM HÓA ĐƠN");
+                    Console.SetCursorPosition(40, 12); Console.Beep();
+                    Console.Write("Nhập Mã Hóa Đơn bạn muốn tìm :"); string Mahd = Console.ReadLine();
+                    hdnDLL.TimKiemHD(Mahd);
+                    Console.ReadKey();
+                    Console.Clear();
+                    Console.SetCursorPosition(44, 1); Console.WriteLine("CHƯƠNG TRÌNH QUẢN LÝ KHO NHÀ HÀNG");
+                    Console.SetCursorPosition(35, 6); Console.WriteLine("█████████████████████████████████████████████████████████");
+                    Console.SetCursorPosition(35, 7); Console.WriteLine("██                                                     ██");
+                    Console.SetCursorPosition(35, 8); Console.WriteLine("██                                                     ██");
+                    Console.SetCursorPosition(35, 9); Console.WriteLine("██                                                     ██");
+                    Console.SetCursorPosition(35, 10); Console.WriteLine("█████████████████████████████████████████████████████████");
+                    Console.SetCursorPosition(38, 8);
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.Write("Bạn có có muốn tìm thêm hd khác không ? (Y/N) :");
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    chon = char.Parse(Console.ReadLine());
+                } while (chon == 'y' || chon == 'Y');
+            }
+            catch { Console.Clear(); Console.ForegroundColor = ConsoleColor.Red; Console.SetCursorPosition(34, 15); Console.WriteLine("Oopps !!!   Something Wrong - Please restart now !"); }
+        }
+        public void HienThiHoaDon()
+        {
+            try
+            {
+                Console.SetCursorPosition(50, 1);
+                Console.WriteLine("DANH SÁCH HÀNG HÓA TRONG KHO");
+                List<HoaDonNhap> list = hdnDLL.LayDSHoaDon();
+                int i = 7;
+                Console.SetCursorPosition(4, 4); Console.WriteLine("███████████████████████████████████████████████████████████████████████████████████████████████████████████████████");
+                Console.SetCursorPosition(4, 5); Console.WriteLine("██ STT █     Mã HD      █            Tên Nhân Viên            █    Mã NV   █     SĐT     █       Ngày Nhập       ██");
+                Console.SetCursorPosition(4, 6); Console.WriteLine("██_____█________________█_____________________________________█____________█_____________█_______________________██");
+                Console.SetCursorPosition(4, 7); Console.WriteLine("██  1  █                █                                     █            █             █                       ██");
+                Console.SetCursorPosition(4, 8); Console.WriteLine("██  2  █                █                                     █            █             █                       ██");
+                Console.SetCursorPosition(4, 9); Console.WriteLine("██  3  █                █                                     █            █             █                       ██");
+                Console.SetCursorPosition(4, 10);Console.WriteLine("██  4  █                █                                     █            █             █                       ██");
+                Console.SetCursorPosition(4, 11);Console.WriteLine("██  5  █                █                                     █            █             █                       ██");
+                Console.SetCursorPosition(4, 12);Console.WriteLine("██  6  █                █                                     █            █             █                       ██");
+                Console.SetCursorPosition(4, 13);Console.WriteLine("██  7  █                █                                     █            █             █                       ██");
+                Console.SetCursorPosition(4, 14);Console.WriteLine("██  8  █                █                                     █            █             █                       ██");
+                Console.SetCursorPosition(4, 15);Console.WriteLine("██  9  █                █                                     █            █             █                       ██");
+                Console.SetCursorPosition(4, 15);Console.WriteLine("██  10 █                █                                     █            █             █                       ██");
+                Console.SetCursorPosition(4, 16);Console.WriteLine("██  11 █                █                                     █            █             █                       ██");
+                Console.SetCursorPosition(4, 17);Console.WriteLine("██  12 █                █                                     █            █             █                       ██");
+                Console.SetCursorPosition(4, 18);Console.WriteLine("██  13 █                █                                     █            █             █                       ██");
+                Console.SetCursorPosition(4, 19);Console.WriteLine("██  14 █                █                                     █            █             █                       ██");
+                Console.SetCursorPosition(4, 20);Console.WriteLine("██  15 █                █                                     █            █             █                       ██");
+                Console.SetCursorPosition(4, 21);Console.WriteLine("██  16 █                █                                     █            █             █                       ██");
+                Console.SetCursorPosition(4, 22);Console.WriteLine("██  17 █                █                                     █            █             █                       ██");
+                Console.SetCursorPosition(4, 23);Console.WriteLine("███████████████████████████████████████████████████████████████████████████████████████████████████████████████████");
+                foreach (var dulieu in list)
+                {
+                    Console.SetCursorPosition(7, 7);
+                    Console.WriteLine($"{dulieu.Mahoadon}");
+                    Console.SetCursorPosition(25, 7);
+                    Console.WriteLine($"{dulieu.Tennv}");
+                    Console.SetCursorPosition(65, 7);
+                    Console.WriteLine($"{dulieu.Manv}");
+                    Console.SetCursorPosition(78, 7);
+                    Console.WriteLine($"{dulieu.Sdt}");
+                    Console.SetCursorPosition(100, 7);
+                    Console.WriteLine($"{dulieu.Ngaynhap}");
+                    i++;
                 }
             }
             catch { Console.Clear(); Console.ForegroundColor = ConsoleColor.Red; Console.SetCursorPosition(34, 15); Console.WriteLine("Oopps !!!   Something Wrong - Please restart now !"); }

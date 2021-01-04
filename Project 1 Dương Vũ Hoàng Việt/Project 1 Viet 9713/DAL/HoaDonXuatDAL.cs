@@ -11,7 +11,7 @@ namespace Project_1_Viet_9713.DAL
     {
         
         private string filename = "hoadonxuat.txt";
-        public List<HoaDonXuat> LayDSHoaDonXuat()
+        public List<HoaDonXuat> LayDSHoaDon()
         {
             List<HoaDonXuat> list = new List<HoaDonXuat>();
             StreamReader SR = File.OpenText(filename);
@@ -21,7 +21,7 @@ namespace Project_1_Viet_9713.DAL
                 if (read != "")
                 {
                     string[] plit = read.Split("|");
-                    list.Add(new HoaDonXuat(plit[0], plit[1], plit[2], plit[3], plit[4], int.Parse(plit[5])));
+                    list.Add(new HoaDonXuat(plit[0], plit[1], plit[2], plit[3], plit[4]));
                 }
                 read = SR.ReadLine();
             }
@@ -32,7 +32,7 @@ namespace Project_1_Viet_9713.DAL
         {
             string mahd = "HD" + DateTime.Now.ToString("yyMMddhhmmss");
             StreamWriter SW = new StreamWriter(filename, true);
-            SW.WriteLine($"{hdx.Mahoadon}|{hdx.Manv}|{hdx.Tennv}|{hdx.Sdt}|{hdx.Ngayxuat}|{hdx.Tongtien}");
+            SW.WriteLine($"{hdx.Mahoadon}|{hdx.Manv}|{hdx.Tennv}|{hdx.Sdt}|{hdx.Ngayxuat}");
             SW.Close();
         }
         public void Update(List<HoaDonXuat> list)
@@ -41,7 +41,7 @@ namespace Project_1_Viet_9713.DAL
             StreamWriter SW = File.CreateText(filename);
             for (int i = 0; i < list.Count; ++i)
             {
-                SW.WriteLine($"{list[i].Mahoadon}|{list[i].Manv}|{list[i].Tennv}|{list[i].Sdt}|{list[i].Ngayxuat}|{list[i].Tongtien}");
+                SW.WriteLine($"{list[i].Mahoadon}|{list[i].Manv}|{list[i].Tennv}|{list[i].Sdt}|{list[i].Ngayxuat}");
             }
             SW.Close();
         }

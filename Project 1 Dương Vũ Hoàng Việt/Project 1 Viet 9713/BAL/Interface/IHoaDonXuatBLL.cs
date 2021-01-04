@@ -9,7 +9,7 @@ namespace Project_1_Viet_9713.BAL.Interface
 {
     public interface IHoaDonXuatBLL
     {
-        List<HoaDonXuat> LayDSHoaDonXuat();
+        List<HoaDonXuat> LayDSHoaDon();
         void LapHoaDon(HoaDonXuat hd);
         void XoaHD(string mahd);
         void SuaHD(HoaDonXuat hd, string mahdcu);

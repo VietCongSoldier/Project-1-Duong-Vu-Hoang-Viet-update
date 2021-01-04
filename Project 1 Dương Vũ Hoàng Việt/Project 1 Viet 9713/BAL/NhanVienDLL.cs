@@ -41,9 +41,9 @@ namespace Project_1_Viet_9713.BAL
                 Console.WriteLine($"{list[i].Namsinh}");
                 Console.SetCursorPosition(73, 8);
                 Console.WriteLine($"{list[i].Gioitinh}");
-                Console.SetCursorPosition(83, 8);
+                Console.SetCursorPosition(85, 8);
                 Console.WriteLine($"{list[i].Sdt}");
-                Console.SetCursorPosition(99, 8);
+                Console.SetCursorPosition(100, 8);
                 Console.WriteLine($"{list[i].Chucvu}");
                 list.RemoveAt(i);
                 list.Add(nv);
@@ -80,9 +80,9 @@ namespace Project_1_Viet_9713.BAL
                 Console.WriteLine($"{list[i].Namsinh}");
                 Console.SetCursorPosition(73, 8);
                 Console.WriteLine($"{list[i].Gioitinh}");
-                Console.SetCursorPosition(83, 8);
+                Console.SetCursorPosition(85, 8);
                 Console.WriteLine($"{list[i].Sdt}");
-                Console.SetCursorPosition(99, 8);
+                Console.SetCursorPosition(100, 8);
                 Console.WriteLine($"{list[i].Chucvu}");
             }
             else

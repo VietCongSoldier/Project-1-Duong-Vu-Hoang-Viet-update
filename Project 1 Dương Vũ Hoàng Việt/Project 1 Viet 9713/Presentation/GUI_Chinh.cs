@@ -12,15 +12,17 @@ namespace Project_1_Viet_9713.Presentation
         {
             try
             {
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.SetCursorPosition(40, 1); Console.WriteLine("CHƯƠNG TRÌNH QUẢN LÝ KHO NHÀ HÀNG");
-                Console.SetCursorPosition(25, 6); Console.WriteLine("███████████████████████████████████████████████████████████████████████");
-                Console.SetCursorPosition(25, 7); Console.WriteLine("█░                                                                   ░█");
-                Console.SetCursorPosition(25, 8); Console.WriteLine("█░                                                                   ░█");
-                Console.SetCursorPosition(25, 9); Console.WriteLine("█░                                                                   ░█");
+                Console.ForegroundColor = ConsoleColor.Gray;
+                Console.SetCursorPosition(25, 6);  Console.WriteLine("███████████████████████████████████████████████████████████████████████");
+                Console.SetCursorPosition(25, 7);  Console.WriteLine("█░                                                                   ░█");
+                Console.SetCursorPosition(25, 8);  Console.WriteLine("█░                                                                   ░█");
+                Console.SetCursorPosition(25, 9);  Console.WriteLine("█░                                                                   ░█");
                 Console.SetCursorPosition(25, 10); Console.WriteLine("███████████████████████████████████████████████████████████████████████");
                 Console.SetCursorPosition(25, 11); Console.WriteLine("█░                                                                   ░█");
                 Console.SetCursorPosition(25, 12); Console.WriteLine("█░                                                                   ░█");
-                Console.SetCursorPosition(25, 13); Console.WriteLine("█░              1. Quản lý danh sách sản phẩm trong kho.             ░█");
+                Console.SetCursorPosition(25, 13); Console.WriteLine("█░              1. Quản lý sản phẩm.                                 ░█");
                 Console.SetCursorPosition(25, 14); Console.WriteLine("█░                                                                   ░█");
                 Console.SetCursorPosition(25, 15); Console.WriteLine("█░              2. Quản lý hóa đơn.                                  ░█");
                 Console.SetCursorPosition(25, 16); Console.WriteLine("█░                                                                   ░█");
@@ -35,7 +37,9 @@ namespace Project_1_Viet_9713.Presentation
                 Console.SetCursorPosition(25, 25); Console.WriteLine("█░                                                                   ░█");
                 Console.SetCursorPosition(25, 26); Console.WriteLine("█░                                                                   ░█");
                 Console.SetCursorPosition(25, 27); Console.WriteLine("███████████████████████████████████████████████████████████████████████");
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.SetCursorPosition(56, 8); Console.WriteLine("MENU");
+                Console.ForegroundColor = ConsoleColor.Gray;
                 string chon;
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.SetCursorPosition(48, 25); Console.Write("Chọn công cụ số:"); Console.Beep();
@@ -83,10 +87,10 @@ namespace Project_1_Viet_9713.Presentation
             try
             {
                 Console.SetCursorPosition(40, 1); Console.WriteLine("CHƯƠNG TRÌNH QUẢN LÝ KHO NHÀ HÀNG");
-                Console.SetCursorPosition(25, 6); Console.WriteLine("███████████████████████████████████████████████████████████████████████");
-                Console.SetCursorPosition(25, 7); Console.WriteLine("█░                                                                   ░█");
-                Console.SetCursorPosition(25, 8); Console.WriteLine("█░                                                                   ░█");
-                Console.SetCursorPosition(25, 9); Console.WriteLine("█░                                                                   ░█");
+                Console.SetCursorPosition(25, 6);  Console.WriteLine("██████████████████████████████      █████████████████████████████████████████");
+                Console.SetCursorPosition(25, 7);  Console.WriteLine("█░                                                                   ░█");
+                Console.SetCursorPosition(25, 8);  Console.WriteLine("█░                                                                   ░█");
+                Console.SetCursorPosition(25, 9);  Console.WriteLine("█░                                                                   ░█");
                 Console.SetCursorPosition(25, 10); Console.WriteLine("███████████████████████████████████████████████████████████████████████");
                 Console.SetCursorPosition(25, 11); Console.WriteLine("█░                                                                   ░█");
                 Console.SetCursorPosition(25, 12); Console.WriteLine("█░                                                                   ░█");
